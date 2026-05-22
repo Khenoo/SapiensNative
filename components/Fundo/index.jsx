@@ -1,21 +1,32 @@
-import styled from 'styled-components'
+import React from 'react'
+import styled from 'styled-components/native'
 import carta from '@/assets/sapienscomcor.png'
 import carta2 from '@/assets/sapienssemcor.png'
-import React from 'react'
-import { ImageBackground, View, Text, StyleSheet } from 'react-native'
+import { ImageBackground } from 'react-native'
 
-const Container = styled.div`
-  width: 100%;
-  height: 100vh;
-
-  display: flex;
-  flex-direction: column;
+const Container = styled.View`
+  flex: 1;
   align-items: center;
   justify-content: center;
 `
 
+const BackgroundStyled = styled(ImageBackground)`
+  flex: 1;
+  width: 100%;
+  height: 100%;
+`
+
 function Fundo({ children }) {
-  return <><ImageBackground source={carta} resizeMode='center'><Container>{children}</Container></ImageBackground></>
+  return (
+    <BackgroundStyled
+      source={carta}
+      resizeMode="contain"
+    >
+      <Container>
+        {children}
+      </Container>
+    </BackgroundStyled>
+  )
 }
 
 export default Fundo
