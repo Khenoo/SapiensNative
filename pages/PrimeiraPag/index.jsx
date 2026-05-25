@@ -7,8 +7,8 @@ function PrimeiraPag({ mudarPagina }) {
     <Fundo>
       <TextBubble
         cor='white'
-        escrever='Seleção de Jogabilidade:
-        Para continuar, selecione a jogabilidade na qual você e seus amigos jogarão.'
+        titulo='Seleção de Jogabilidade:'
+        texto='Para continuar, selecione a jogabilidade na qual você e seus amigos jogarão.'
       />
 
       <div

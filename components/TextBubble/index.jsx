@@ -1,17 +1,19 @@
 function TextBubble(props) {
   const cor = props.cor
-  const escrever = props.escrever
+  const titulo = props.titulo
+  const texto = props.texto
 
   let bolhadetexto = <button style={{
   background: cor,
   color: 'black',
-  padding: '10px 40%',
+  padding: '5% 5%',
   margin: '6px',
   border: 'dotted',
   borderRadius: '30px',
   fontSize: '18px',
   marginBottom: 'auto'
-  }}> {escrever} </button>
+  }}> <p>{titulo}</p>
+      <p>{texto}</p> </button>
   return (
     bolhadetexto
 )

@@ -7,8 +7,8 @@ function SelecTemaLaranja({ mudarPagina }) {
     <Fundo>
       <TextBubble
         cor='orange'
-        escrever='Seleção de Tema:
-        Para continuar, selecione um dos temas da grande área de Ciências Humanas.'
+        titulo='Seleção de Tema:'
+        texto='Para continuar, selecione um dos temas da grande área de Ciências Humanas.'
       />
 
       <div

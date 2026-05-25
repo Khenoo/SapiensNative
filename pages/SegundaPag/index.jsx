@@ -7,7 +7,8 @@ function SegundaPag({ mudarPagina }) {
     <Fundo>
       <TextBubble
         cor='white'
-        escrever='Descrever o que deve ser escrito no cabecalho'
+        titulo='Seleção de Grande Área.'
+        texto='Para continuar, selecione a grande área na qual você e seus amigos receberão a carta.'
       />
 
       <div
@@ -26,11 +27,11 @@ function SegundaPag({ mudarPagina }) {
         />
 
         <Button cor="yellow" escrever="Linguas" />
-        <Button cor="purple" escrever="Entretenimento" />
+        <Button cor="rgba(170, 80, 255, 1)" escrever="Entretenimento" />
         <Button cor="white" escrever="Ciências Exatas" />
         <Button cor="red" escrever="Ciências Sociais Aplicadas" />
         <Button cor="pink" escrever="Conhecimentos Gerais" />
-        <Button cor="blue" escrever="Lazer" />
+        <Button cor="rgba(80, 170, 255, 1)" escrever="Lazer" />
         <Button cor="green" escrever="Ciências Naturais" />
 
         <Button

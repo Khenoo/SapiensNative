@@ -15,8 +15,7 @@ return(
         }}>
         <p style={{
             fontSize: '30px'
-        }}>{escreverpergunta}
-        </p>
+        }}>{escreverpergunta}</p>
 </div>
 
 )

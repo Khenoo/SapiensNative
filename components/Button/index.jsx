@@ -1,25 +1,37 @@
+import { TouchableOpacity, Text } from 'react-native'
+
 function Button(props) {
   const cor = props.cor
   const escrever = props.escrever
   const onClick = props.onClick
 
   return (
-    <button
-      onClick={onClick}
+    <TouchableOpacity
+      onPress={onClick}
       style={{
-        display: 'flex',
-        background: cor,
-        color: 'black',
-        padding: '10px 25px',
-        margin: '6px',
-        border: 'dotted',
-        borderRadius: '30px',
-        fontSize: '18px',
-        cursor: 'pointer'
+        backgroundColor: cor,
+        paddingVertical: 10,
+        paddingHorizontal: 20,
+        margin: 6,
+        borderWidth: 2,
+        borderStyle: 'dotted',
+        borderRadius: 30,
+        minWidth: 140,
+        maxWidth: '90%',
+        justifyContent: 'center',
+        alignItems: 'center',
       }}
     >
-      {escrever}
-    </button>
+      <Text
+        style={{
+          color: 'black',
+          fontSize: 16,
+          textAlign: 'center',
+        }}
+      >
+        {escrever}
+      </Text>
+    </TouchableOpacity>
   )
 }
 
