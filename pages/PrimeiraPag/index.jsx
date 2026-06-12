@@ -5,35 +5,91 @@ import TextBubble from '../../components/TextBubble'
 function PrimeiraPag({ mudarPagina }) {
   return (
     <Fundo>
-      <TextBubble
-        cor='white'
-        titulo='Seleção de Jogabilidade:'
-        texto='Para continuar, selecione a jogabilidade na qual você e seus amigos jogarão.'
-      />
-
       <div
         style={{
+          flex: 1,
+          width: '100%',
+
           display: 'flex',
-          flexWrap: 'wrap',
-          height: '400px',
-          alignContent: 'space-between',
-          justifyContent: 'center',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+
+          padding: '20px',
+          boxSizing: 'border-box',
         }}
       >
-        <Button
-          cor="white"
-          escrever="O Generalista"
-          onClick={() => mudarPagina('segunda')}
+        <TextBubble
+          cor='white'
+          titulo='Seleção de Jogabilidade'
+          texto='Para continuar, selecione a jogabilidade na qual você e seus amigos jogarão.'
         />
 
-        <Button cor="white" escrever="Mestre dos Magos" />
-        <Button cor="white" escrever="O Caminho Para a Vitória" />
-        <Button cor="white" escrever="Copa do Mundo" />
-        <Button cor="white" escrever="Generalista Sortudo" />
-        <Button cor="white" escrever="Essa é a sua área" />
-        <Button cor="white" escrever="Cartas na mesa" />
-        <Button cor="white" escrever="O Especialista" />
-        <Button cor="white" escrever="O Especialista Sortudo" />
+        <div
+          style={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            justifyContent: 'center',
+            alignItems: 'center',
+            gap: '12px',
+            width: '100%',
+            maxWidth: '1000px',
+          }}
+        >
+          <Button
+            cor="white"
+            escrever="O Generalista"
+            onClick={() => mudarPagina('segunda')}
+          />
+
+          <Button
+            cor="white"
+            escrever="Mestre dos Magos"
+            onClick={() => mudarPagina('segunda')}
+          />
+
+          <Button
+            cor="white"
+            escrever="O Caminho Para a Vitória"
+            onClick={() => mudarPagina('segunda')}
+          />
+
+          <Button
+            cor="white"
+            escrever="Copa do Mundo"
+            onClick={() => mudarPagina('copa')}
+          />
+
+          <Button
+            cor="white"
+            escrever="Generalista Sortudo"
+            onClick={() => mudarPagina('atencao')}
+          />
+
+          <Button
+            cor="white"
+            escrever="Essa é a sua área"
+            onClick={() => mudarPagina('segunda')}
+          />
+
+          <Button
+            cor="white"
+            escrever="Cartas na mesa"
+            onClick={() => mudarPagina('segunda')}
+          />
+
+          <Button
+            cor="white"
+            escrever="O Especialista"
+            onClick={() => mudarPagina('segunda')}
+          />
+
+          <Button
+            cor="white"
+            escrever="O Especialista Sortudo"
+            onClick={() => mudarPagina('atencao')}
+          />
+        </div>
 
         <Button
           cor="white"

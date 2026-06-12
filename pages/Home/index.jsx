@@ -21,11 +21,13 @@ function Home({ mudarPagina }) {
         <Button
           cor="white"
           escrever="Configurações"
+          onClick={() => mudarPagina('config')}
         />
 
         <Button
           cor="white"
           escrever="Tutorial"
+          onClick={() => mudarPagina('tutorial')}
         />
       </div>
     </Background>

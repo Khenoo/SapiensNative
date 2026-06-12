@@ -2,27 +2,25 @@ import Fundo from '../../components/Fundo'
 import Button from '../../components/Button'
 import TextBubble from '../../components/TextBubble'
 
-function SelecTemaLaranja({ mudarPagina }) {
+function SelecTemaVermelho({ mudarPagina }) {
   return (
     <Fundo>
       <div
         style={{
           flex: 1,
           width: '100%',
-
           display: 'flex',
           flexDirection: 'column',
-          alignItems: 'center',
           justifyContent: 'space-between',
-
+          alignItems: 'center',
           padding: '20px',
           boxSizing: 'border-box',
         }}
       >
         <TextBubble
-          cor='orange'
+          cor='rgba(255, 75, 75, 1)'
           titulo='Seleção de Tema'
-          texto='Para continuar, selecione um dos temas da grande área de Ciências Humanas.'
+          texto='Selecione um dos temas de Ciências Sociais Aplicadas.'
         />
 
         <div
@@ -30,21 +28,13 @@ function SelecTemaLaranja({ mudarPagina }) {
             display: 'flex',
             flexWrap: 'wrap',
             justifyContent: 'center',
-            alignItems: 'center',
             gap: '12px',
-            width: '100%',
-            maxWidth: '1000px',
           }}
         >
-          <Button
-            cor="orange"
-            escrever="Geografia"
-            onClick={() => mudarPagina('atencao')}
-          />
-
-          <Button cor="orange" escrever="História" />
-          <Button cor="orange" escrever="Filosofia" />
-          <Button cor="orange" escrever="Socio, Psico e Educação" />
+          <Button cor="rgba(255, 75, 75, 1)" escrever="Administração" />
+          <Button cor="rgba(255, 75, 75, 1)" escrever="Economia" />
+          <Button cor="rgba(255, 75, 75, 1)" escrever="Direito" />
+          <Button cor="rgba(255, 75, 75, 1)" escrever="Publicidade" />
         </div>
 
         <Button
@@ -57,4 +47,4 @@ function SelecTemaLaranja({ mudarPagina }) {
   )
 }
 
-export default SelecTemaLaranja
+export default SelecTemaVermelho

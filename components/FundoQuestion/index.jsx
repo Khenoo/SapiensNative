@@ -13,9 +13,17 @@ return(
             padding: '30px',
             alignItems:'center'
         }}>
-        <p style={{
-            fontSize: '30px'
-        }}>{escreverpergunta}</p>
+        <p
+            style={{
+                fontSize: '30px',
+                textAlign: 'center',
+                width: '85%',
+                lineHeight: '1.5',
+            }}
+        >
+            {escreverpergunta}
+            
+        </p>
 </div>
 
 )

@@ -5,34 +5,67 @@ import TextBubble from '../../components/TextBubble'
 function SegundaPag({ mudarPagina }) {
   return (
     <Fundo>
-      <TextBubble
-        cor='white'
-        titulo='Seleção de Grande Área.'
-        texto='Para continuar, selecione a grande área na qual você e seus amigos receberão a carta.'
-      />
-
       <div
         style={{
+          flex: 1,
+          width: '100%',
+
           display: 'flex',
-          flexWrap: 'wrap',
-          height: '400px',
-          alignContent: 'space-between',
-          justifyContent: 'center',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+
+          padding: '20px',
+          boxSizing: 'border-box',
         }}
       >
-        <Button
-          cor="orange"
-          escrever="Ciências Humanas"
-          onClick={() => mudarPagina('temaLaranja')}
+        <TextBubble
+          cor='white'
+          titulo='Seleção de Grande Área.'
+          texto='Para continuar, selecione a grande área na qual você e seus amigos receberão a carta.'
         />
 
-        <Button cor="yellow" escrever="Linguas" />
-        <Button cor="rgba(170, 80, 255, 1)" escrever="Entretenimento" />
-        <Button cor="white" escrever="Ciências Exatas" />
-        <Button cor="red" escrever="Ciências Sociais Aplicadas" />
-        <Button cor="pink" escrever="Conhecimentos Gerais" />
-        <Button cor="rgba(80, 170, 255, 1)" escrever="Lazer" />
-        <Button cor="green" escrever="Ciências Naturais" />
+        <div
+          style={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            justifyContent: 'center',
+            alignItems: 'center',
+            gap: '12px',
+            width: '100%',
+            maxWidth: '1000px',
+          }}
+        >
+          <Button
+            cor="orange"
+            escrever="Ciências Humanas"
+            onClick={() => mudarPagina('temaLaranja')}
+          />
+
+          <Button cor="yellow" escrever="Linguas" onClick={() => mudarPagina('temaAmarelo')} />
+
+          <Button
+            cor="rgba(170, 80, 255, 1)"
+            escrever="Entretenimento"
+            onClick={() => mudarPagina('temaRoxo')}
+          />
+
+          <Button cor="white" escrever="Ciências Exatas" onClick={() => mudarPagina('temaBranco')} />
+          <Button
+            cor="rgba(255, 75, 75, 1)"
+            escrever="Ciências Sociais Aplicadas"
+            onClick={() => mudarPagina('temaVermelho')}
+          />
+          <Button cor="pink" escrever="Conhecimentos Gerais" onClick={() => mudarPagina('temaRosa')} />
+
+          <Button
+            cor="rgba(80, 170, 255, 1)"
+            escrever="Lazer"
+            onClick={() => mudarPagina('temaAzul')}
+          />
+
+          <Button cor="green" escrever="Ciências Naturais" onClick={() => mudarPagina('temaVerde')} />
+        </div>
 
         <Button
           cor="white"
