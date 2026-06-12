@@ -30,16 +30,24 @@ function SelecTemaRosa({ mudarPagina }) {
             gap: '12px',
           }}
         >
-          <Button cor="pink" escrever="Curiosidades" />
-          <Button cor="pink" escrever="Mundo" />
-          <Button cor="pink" escrever="Atualidades" />
-          <Button cor="pink" escrever="Mistérios" />
+          <Button cor="pink"
+           escrever="Curiosidades"
+           onPress={() => mudarPagina('atencao')} />
+          <Button cor="pink"
+           escrever="Mundo"
+           onPress={() => mudarPagina('atencao')} />
+          <Button cor="pink"
+           escrever="Atualidades"
+           onPress={() => mudarPagina('atencao')} />
+          <Button cor="pink"
+           escrever="Mistérios"
+           onPress={() => mudarPagina('atencao')} />
         </div>
 
         <Button
           cor="white"
           escrever="Retornar ao Menu Principal"
-          onClick={() => mudarPagina('home')}
+          onPress={() => mudarPagina('home')}
         />
       </div>
     </Fundo>

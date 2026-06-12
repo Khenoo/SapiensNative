@@ -30,16 +30,24 @@ function SelecTemaAzul({ mudarPagina }) {
             gap: '12px',
           }}
         >
-          <Button cor="rgba(80, 170, 255, 1)" escrever="Jogos" />
-          <Button cor="rgba(80, 170, 255, 1)" escrever="Esportes" />
-          <Button cor="rgba(80, 170, 255, 1)" escrever="Viagens" />
-          <Button cor="rgba(80, 170, 255, 1)" escrever="Música" />
+          <Button cor="rgba(80, 170, 255, 1)"
+           escrever="Jogos"
+           onPress={() => mudarPagina('atencao')} />
+          <Button cor="rgba(80, 170, 255, 1)"
+           escrever="Esportes"
+           onPress={() => mudarPagina('atencao')} />
+          <Button cor="rgba(80, 170, 255, 1)"
+           escrever="Viagens"
+           onPress={() => mudarPagina('atencao')} />
+          <Button cor="rgba(80, 170, 255, 1)"
+           escrever="Música"
+           onPress={() => mudarPagina('atencao')} />
         </div>
 
         <Button
           cor="white"
           escrever="Retornar ao Menu Principal"
-          onClick={() => mudarPagina('home')}
+          onPress={() => mudarPagina('home')}
         />
       </div>
     </Fundo>

@@ -39,38 +39,38 @@ function SegundaPag({ mudarPagina }) {
           <Button
             cor="orange"
             escrever="Ciências Humanas"
-            onClick={() => mudarPagina('temaLaranja')}
+            onPress={() => mudarPagina('temaLaranja')}
           />
 
-          <Button cor="yellow" escrever="Linguas" onClick={() => mudarPagina('temaAmarelo')} />
+          <Button cor="yellow" escrever="Linguas" onPress={() => mudarPagina('temaAmarelo')} />
 
           <Button
             cor="rgba(170, 80, 255, 1)"
             escrever="Entretenimento"
-            onClick={() => mudarPagina('temaRoxo')}
+            onPress={() => mudarPagina('temaRoxo')}
           />
 
-          <Button cor="white" escrever="Ciências Exatas" onClick={() => mudarPagina('temaBranco')} />
+          <Button cor="white" escrever="Ciências Exatas" onPress={() => mudarPagina('temaBranco')} />
           <Button
             cor="rgba(255, 75, 75, 1)"
             escrever="Ciências Sociais Aplicadas"
-            onClick={() => mudarPagina('temaVermelho')}
+            onPress={() => mudarPagina('temaVermelho')}
           />
-          <Button cor="pink" escrever="Conhecimentos Gerais" onClick={() => mudarPagina('temaRosa')} />
+          <Button cor="pink" escrever="Conhecimentos Gerais" onPress={() => mudarPagina('temaRosa')} />
 
           <Button
             cor="rgba(80, 170, 255, 1)"
             escrever="Lazer"
-            onClick={() => mudarPagina('temaAzul')}
+            onPress={() => mudarPagina('temaAzul')}
           />
 
-          <Button cor="green" escrever="Ciências Naturais" onClick={() => mudarPagina('temaVerde')} />
+          <Button cor="green" escrever="Ciências Naturais" onPress={() => mudarPagina('temaVerde')} />
         </div>
 
         <Button
           cor="white"
           escrever="Retornar ao Menu Inicial"
-          onClick={() => mudarPagina('home')}
+          onPress={() => mudarPagina('home')}
         />
       </div>
     </Fundo>

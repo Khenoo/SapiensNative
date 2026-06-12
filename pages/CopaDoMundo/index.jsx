@@ -36,20 +36,20 @@ function CopaDoMundo({ mudarPagina }) {
           <Button
             cor="white"
             escrever="Pergunta Gerada pelo Sistema"
-            onClick={() => mudarPagina('segunda')}
+            onPress={() => mudarPagina('atencao')}
           />
 
           <Button
             cor="white"
             escrever="Escolha do Jogador"
-            onClick={() => mudarPagina('segunda')}
+            onPress={() => mudarPagina('segunda')}
           />
         </div>
 
         <Button
           cor="white"
           escrever="Retornar ao Menu Inicial"
-          onClick={() => mudarPagina('home')}
+          onPress={() => mudarPagina('home')}
         />
       </div>
     </Fundo>

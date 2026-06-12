@@ -30,16 +30,24 @@ function SelecTemaAmarelo({ mudarPagina }) {
             gap: '12px',
           }}
         >
-          <Button cor="yellow" escrever="Português" />
-          <Button cor="yellow" escrever="Inglês" />
-          <Button cor="yellow" escrever="Literatura" />
-          <Button cor="yellow" escrever="Gramática" />
+          <Button cor="yellow"
+           escrever="Português"
+           onPress={() => mudarPagina('atencao')} />
+          <Button cor="yellow"
+           escrever="Inglês"
+           onPress={() => mudarPagina('atencao')} />
+          <Button cor="yellow"
+           escrever="Literatura"
+           onPress={() => mudarPagina('atencao')} />
+          <Button cor="yellow"
+           escrever="Gramática"
+           onPress={() => mudarPagina('atencao')} />
         </div>
 
         <Button
           cor="white"
           escrever="Retornar ao Menu Principal"
-          onClick={() => mudarPagina('home')}
+          onPress={() => mudarPagina('home')}
         />
       </div>
     </Fundo>

@@ -96,7 +96,7 @@ function Configuracoes({ mudarPagina }) {
         <Button
           cor="white"
           escrever="Retornar ao Menu Inicial"
-          onClick={() => mudarPagina('home')}
+          onPress={() => mudarPagina('home')}
         />
       </div>
     </Fundo>

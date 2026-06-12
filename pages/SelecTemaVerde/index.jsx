@@ -30,16 +30,24 @@ function SelecTemaVerde({ mudarPagina }) {
             gap: '12px',
           }}
         >
-          <Button cor="green" escrever="Biologia" />
-          <Button cor="green" escrever="Química" />
-          <Button cor="green" escrever="Física" />
-          <Button cor="green" escrever="Astronomia" />
+          <Button cor="green"
+           escrever="Biologia"
+           onPress={() => mudarPagina('atencao')} />
+          <Button cor="green"
+           escrever="Química"
+           onPress={() => mudarPagina('atencao')} />
+          <Button cor="green"
+           escrever="Física"
+           onPress={() => mudarPagina('atencao')} />
+          <Button cor="green"
+           escrever="Astronomia"
+           onPress={() => mudarPagina('atencao')} />
         </div>
 
         <Button
           cor="white"
           escrever="Retornar ao Menu Principal"
-          onClick={() => mudarPagina('home')}
+          onPress={() => mudarPagina('home')}
         />
       </div>
     </Fundo>

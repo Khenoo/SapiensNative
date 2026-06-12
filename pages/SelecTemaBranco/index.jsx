@@ -30,16 +30,24 @@ function SelecTemaBranco({ mudarPagina }) {
             gap: '12px',
           }}
         >
-          <Button cor="white" escrever="Matemática" />
-          <Button cor="white" escrever="Lógica" />
-          <Button cor="white" escrever="Tecnologia" />
-          <Button cor="white" escrever="Computação" />
+          <Button cor="white"
+           escrever="Matemática"
+           onPress={() => mudarPagina('atencao')} />
+          <Button cor="white"
+           escrever="Lógica"
+           onPress={() => mudarPagina('atencao')} />
+          <Button cor="white"
+           escrever="Tecnologia"
+           onPress={() => mudarPagina('atencao')} />
+          <Button cor="white"
+           escrever="Computação"
+           onPress={() => mudarPagina('atencao')} />
         </div>
 
         <Button
           cor="white"
           escrever="Retornar ao Menu Principal"
-          onClick={() => mudarPagina('home')}
+          onPress={() => mudarPagina('home')}
         />
       </div>
     </Fundo>

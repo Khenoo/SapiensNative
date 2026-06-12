@@ -1,20 +1,20 @@
 import styled from 'styled-components'
+import { View } from 'react-native'
 
-const Container = styled.div`
-  width: 100%;
-  height: 100vh;
-  background-color: orange;
-  background-size: cover;
-  background-position: center;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-`
 
 function Question({ children }) {
-  return <Container>{children}</Container>
+  return <view style={{
+      width: '100%',
+      flex: 1,
+      backgroundColor: 'orange',
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+
+      flexDirection: 'column',
+      alignItems: 'center',
+      justifyContent: 'center',
+  }}
+  >{children}</view>
 }
 
 export default Question

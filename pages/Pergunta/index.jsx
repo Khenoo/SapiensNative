@@ -5,13 +5,23 @@ import FundoQuestion from '../../components/FundoQuestion'
 function Pergunta({ mudarPagina }) {
   return (
     <Question>
-      <FundoQuestion escreverpergunta='Qual é a parte do computador responsável por conectar e interligar todos os componentes do computador entre si?' />
+      <FundoQuestion pergunta='Qual é a parte do computador responsável por conectar e interligar todos os componentes do computador entre si?' />
+
+      <div style={{
+        flex: 1,
+        justifyContent: 'center',
+        marginLeft: '25px',
+        alignItems:'center',
+        marginHorizontal: 'auto',
+        marginTop: 'auto'
+      }}>
 
       <Button
         cor='white'
         escrever='Ir Para a Resposta'
-        onClick={() => mudarPagina('resposta')}
+        onPress={() => mudarPagina('resposta')}
       />
+      </div>
     </Question>
   )
 }

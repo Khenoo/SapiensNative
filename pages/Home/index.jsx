@@ -15,19 +15,19 @@ function Home({ mudarPagina }) {
         <Button
           cor="white"
           escrever="Jogar"
-          onClick={() => mudarPagina('primeira')}
+          onPress={() => mudarPagina('primeira')}
         />
 
         <Button
           cor="white"
           escrever="Configurações"
-          onClick={() => mudarPagina('config')}
+          onPress={() => mudarPagina('config')}
         />
 
         <Button
           cor="white"
           escrever="Tutorial"
-          onClick={() => mudarPagina('tutorial')}
+          onPress={() => mudarPagina('tutorial')}
         />
       </div>
     </Background>

@@ -39,62 +39,62 @@ function PrimeiraPag({ mudarPagina }) {
           <Button
             cor="white"
             escrever="O Generalista"
-            onClick={() => mudarPagina('segunda')}
+            onPress={() => mudarPagina('segunda')}
           />
 
           <Button
             cor="white"
             escrever="Mestre dos Magos"
-            onClick={() => mudarPagina('segunda')}
+            onPress={() => mudarPagina('segunda')}
           />
 
           <Button
             cor="white"
             escrever="O Caminho Para a Vitória"
-            onClick={() => mudarPagina('segunda')}
+            onPress={() => mudarPagina('segunda')}
           />
 
           <Button
             cor="white"
             escrever="Copa do Mundo"
-            onClick={() => mudarPagina('copa')}
+            onPress={() => mudarPagina('copa')}
           />
 
           <Button
             cor="white"
             escrever="Generalista Sortudo"
-            onClick={() => mudarPagina('atencao')}
+            onPress={() => mudarPagina('atencao')}
           />
 
           <Button
             cor="white"
             escrever="Essa é a sua área"
-            onClick={() => mudarPagina('segunda')}
+            onPress={() => mudarPagina('segunda')}
           />
 
           <Button
             cor="white"
             escrever="Cartas na mesa"
-            onClick={() => mudarPagina('segunda')}
+            onPress={() => mudarPagina('segunda')}
           />
 
           <Button
             cor="white"
             escrever="O Especialista"
-            onClick={() => mudarPagina('segunda')}
+            onPress={() => mudarPagina('segunda')}
           />
 
           <Button
             cor="white"
             escrever="O Especialista Sortudo"
-            onClick={() => mudarPagina('atencao')}
+            onPress={() => mudarPagina('atencao')}
           />
         </div>
 
         <Button
           cor="white"
           escrever="Retornar ao Menu Principal"
-          onClick={() => mudarPagina('home')}
+          onPress={() => mudarPagina('home')}
         />
       </div>
     </Fundo>

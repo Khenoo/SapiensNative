@@ -39,18 +39,24 @@ function SelecTemaLaranja({ mudarPagina }) {
           <Button
             cor="orange"
             escrever="Geografia"
-            onClick={() => mudarPagina('atencao')}
+            onPress={() => mudarPagina('atencao')}
           />
 
-          <Button cor="orange" escrever="História" />
-          <Button cor="orange" escrever="Filosofia" />
-          <Button cor="orange" escrever="Socio, Psico e Educação" />
+          <Button cor="orange"
+           escrever="História"
+           onPress={() => mudarPagina('atencao')} />
+          <Button cor="orange"
+           escrever="Filosofia"
+           onPress={() => mudarPagina('atencao')} />
+          <Button cor="orange"
+           escrever="Socio, Psico e Educação"
+           onPress={() => mudarPagina('atencao')} />
         </div>
 
         <Button
           cor="white"
           escrever="Retornar ao Menu Principal"
-          onClick={() => mudarPagina('home')}
+          onPress={() => mudarPagina('home')}
         />
       </div>
     </Fundo>

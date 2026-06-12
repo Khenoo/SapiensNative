@@ -1,30 +1,47 @@
+import { View, Text } from 'react-native'
+
 function fundoQuestion(props){
 
-    const escreverpergunta = props.escreverpergunta
+    const pergunta = props.pergunta
+    const resposta = props.resposta
 
 return(
-    <div style={{
-            display: 'flex',
+    <View style={{
+            flex: 1,
             backgroundColor: 'lightyellow',
             height: '70%',
-            width: '70%',
+            width:  '80%',
             border: 'dotted',
             justifyContent: 'center',
             padding: '30px',
-            alignItems:'center'
+            alignItems:'center',
+            marginHorizontal: 'auto',
+            marginTop: '20%'
         }}>
-        <p
+        <Text
             style={{
-                fontSize: '30px',
+                fontSize: 18,
                 textAlign: 'center',
-                width: '85%',
-                lineHeight: '1.5',
+                width: '90%',
+                lineHeight: 28,
             }}
         >
-            {escreverpergunta}
+            {pergunta}
             
-        </p>
-</div>
+        </Text>
+        <Text
+            style={{
+                marginTop: '50%',
+                fontSize: 36,
+                textAlign: 'center',
+                width: '90%',
+                lineHeight: 28,
+            }}
+        >
+            {resposta}
+            
+        </Text>
+</View>
 
 )
 }

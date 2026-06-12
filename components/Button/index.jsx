@@ -3,11 +3,11 @@ import { TouchableOpacity, Text } from 'react-native'
 function Button(props) {
   const cor = props.cor
   const escrever = props.escrever
-  const onClick = props.onClick
+  const onPress = props.onPress
 
   return (
     <TouchableOpacity
-      onPress={onClick}
+      onPress={onPress}
       style={{
         backgroundColor: cor,
         paddingVertical: 10,

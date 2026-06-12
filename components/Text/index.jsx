@@ -1,11 +1,13 @@
+import { Text } from 'react-native'
+
 export default function Text(props){
   const cor = props.cor
   const escrever = props.escrever
 
-  let texto = <h1 style={{
+  let texto = <Text style={{
     fontSize: '100px',
     color: cor,
-  }}> {escrever} </h1>
+  }}> {escrever} </Text>
 
   return(
     texto

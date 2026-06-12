@@ -30,16 +30,24 @@ function SelecTemaRoxo({ mudarPagina }) {
             gap: '12px',
           }}
         >
-          <Button cor="rgba(170, 80, 255, 1)" escrever="Cinema" />
-          <Button cor="rgba(170, 80, 255, 1)" escrever="Séries" />
-          <Button cor="rgba(170, 80, 255, 1)" escrever="Animes" />
-          <Button cor="rgba(170, 80, 255, 1)" escrever="Jogos" />
+          <Button cor="rgba(170, 80, 255, 1)"
+           escrever="Cinema"
+           onPress={() => mudarPagina('atencao')} />
+          <Button cor="rgba(170, 80, 255, 1)"
+           escrever="Séries"
+           onPress={() => mudarPagina('atencao')} />
+          <Button cor="rgba(170, 80, 255, 1)"
+           escrever="Animes"
+           onPress={() => mudarPagina('atencao')} />
+          <Button cor="rgba(170, 80, 255, 1)"
+           escrever="Jogos"
+           onPress={() => mudarPagina('atencao')} />
         </div>
 
         <Button
           cor="white"
           escrever="Retornar ao Menu Principal"
-          onClick={() => mudarPagina('home')}
+          onPress={() => mudarPagina('home')}
         />
       </div>
     </Fundo>

@@ -73,13 +73,13 @@ function Atencao({ mudarPagina }) {
           <Button
             cor="white"
             escrever="Continuar Para Pergunta"
-            onClick={() => mudarPagina('pergunta')}
+            onPress={() => mudarPagina('pergunta')}
           />
         </div>
         <Button
           cor="white"
           escrever="Retornar ao Menu Inicial"
-          onClick={() => mudarPagina('home')}
+          onPress={() => mudarPagina('home')}
         />
       </div>
     </Fundo>
