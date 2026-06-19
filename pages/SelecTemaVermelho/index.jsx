@@ -2,19 +2,40 @@ import Fundo from '../../components/Fundo'
 import Button from '../../components/Button'
 import TextBubble from '../../components/TextBubble'
 
-function SelecTemaVermelho({ mudarPagina }) {
+import { View } from 'react-native'
+
+import perguntas from '../../data/perguntas'
+
+function SelecTemaVermelho({
+  mudarPagina,
+  setPerguntaAtual,
+  setRespostaAtual,
+  setCorPergunta
+}) {
+
+  function gerarPergunta(listaPerguntas) {
+    const sorteada =
+      listaPerguntas[
+        Math.floor(Math.random() * listaPerguntas.length)
+      ]
+
+    setPerguntaAtual(sorteada.pergunta)
+    setRespostaAtual(sorteada.resposta)
+
+    setCorPergunta('rgba(255, 75, 75, 1)')
+
+    mudarPagina('atencao')
+  }
+
   return (
     <Fundo>
-      <div
+      <View
         style={{
           flex: 1,
           width: '100%',
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'space-between',
           alignItems: 'center',
-          padding: '20px',
-          boxSizing: 'border-box',
+          justifyContent: 'space-between',
+          padding: 20,
         }}
       >
         <TextBubble
@@ -23,34 +44,45 @@ function SelecTemaVermelho({ mudarPagina }) {
           texto='Selecione um dos temas de Ciências Sociais Aplicadas.'
         />
 
-        <div
+        <View
           style={{
-            display: 'flex',
+            width: '100%',
+            flexDirection: 'row',
             flexWrap: 'wrap',
             justifyContent: 'center',
-            gap: '12px',
           }}
         >
-          <Button cor="rgba(255, 75, 75, 1)"
-           escrever="Administração"
-           onPress={() => mudarPagina('atencao')} />
-          <Button cor="rgba(255, 75, 75, 1)"
-           escrever="Economia"
-           onPress={() => mudarPagina('atencao')} />
-          <Button cor="rgba(255, 75, 75, 1)"
-           escrever="Direito"
-           onPress={() => mudarPagina('atencao')} />
-          <Button cor="rgba(255, 75, 75, 1)"
-           escrever="Publicidade"
-           onPress={() => mudarPagina('atencao')} />
-        </div>
+          <Button
+            cor='rgba(255, 75, 75, 1)'
+            escrever='Economia e Administração'
+            onPress={() => gerarPergunta(perguntas.economiaAdministracao)}
+          />
+
+          <Button
+            cor='rgba(255, 75, 75, 1)'
+            escrever='Direito'
+            onPress={() => gerarPergunta(perguntas.direito)}
+          />
+
+          <Button
+            cor='rgba(255, 75, 75, 1)'
+            escrever='Política'
+            onPress={() => gerarPergunta(perguntas.politica)}
+          />
+
+          <Button
+            cor='rgba(255, 75, 75, 1)'
+            escrever='Comunicação e Imprensa'
+            onPress={() => gerarPergunta(perguntas.comunicacaoImprensa)}
+          />
+        </View>
 
         <Button
-          cor="white"
-          escrever="Retornar ao Menu Principal"
+          cor='white'
+          escrever='Retornar ao Menu Principal'
           onPress={() => mudarPagina('home')}
         />
-      </div>
+      </View>
     </Fundo>
   )
 }

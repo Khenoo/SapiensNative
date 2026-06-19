@@ -1,15 +1,18 @@
+import { View } from 'react-native'
+
 import Background from '../../components/Background'
 import Button from '../../components/Button'
 
 function Home({ mudarPagina }) {
   return (
     <Background>
-      <div
+      <View
         style={{
-          display: 'flex',
-          flexDirection: 'column',
-          marginTop: 'auto',
-          marginBottom: '5%'
+          flex: 1,
+          width: '100%',
+          justifyContent: 'flex-end',
+          alignItems: 'center',
+          paddingBottom: 40,
         }}
       >
         <Button
@@ -29,7 +32,7 @@ function Home({ mudarPagina }) {
           escrever="Tutorial"
           onPress={() => mudarPagina('tutorial')}
         />
-      </div>
+      </View>
     </Background>
   )
 }

@@ -1,3 +1,5 @@
+import { View, Text, ScrollView } from 'react-native'
+
 import Fundo from '../../components/Fundo'
 import Button from '../../components/Button'
 import TextBubble from '../../components/TextBubble'
@@ -5,17 +7,11 @@ import TextBubble from '../../components/TextBubble'
 function Tutorial({ mudarPagina }) {
   return (
     <Fundo>
-      <div
+      <View
         style={{
+          flex: 1,
           width: '100%',
-          height: '100vh',
-
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-
-          padding: '20px',
-          boxSizing: 'border-box',
+          padding: 20,
         }}
       >
         <TextBubble
@@ -23,85 +19,57 @@ function Tutorial({ mudarPagina }) {
           titulo='Tutorial do Jogo'
           texto='Aprenda como jogar o Sapiens.'
         />
-        <div
+
+        <ScrollView
           style={{
-            width: '90%',
-            maxWidth: '900px',
-
             flex: 1,
-
-            overflowY: 'auto',
-
-            backgroundColor: 'rgba(255,255,255,0.85)',
-
-            border: 'dotted',
-            borderRadius: '20px',
-
-            padding: '20px',
-
-            marginTop: '15px',
-            marginBottom: '15px',
+            marginVertical: 15,
+            backgroundColor: 'rgba(255,255,255,0.9)',
+            borderWidth: 2,
+            borderRadius: 20,
+            padding: 20,
           }}
         >
-          <h2>Como jogar</h2>
+          <Text style={{ fontSize: 24, fontWeight: 'bold' }}>
+            Como jogar
+          </Text>
 
-          <p>
-            1. Escolha um modo de jogo.
-          </p>
+          <Text>1. Escolha um modo de jogo.</Text>
+          <Text>2. Escolha a grande área desejada.</Text>
+          <Text>3. Escolha um tema.</Text>
+          <Text>4. Passe o celular para o leitor.</Text>
+          <Text>5. O sistema irá gerar uma pergunta.</Text>
+          <Text>6. Leia a pergunta e tente acertar.</Text>
+          <Text>7. Revele a resposta.</Text>
+          <Text>8. Continue até decidir parar.</Text>
 
-          <p>
-            2. Escolha a grande área desejada.
-          </p>
+          <Text
+            style={{
+              fontSize: 24,
+              fontWeight: 'bold',
+              marginTop: 20,
+            }}
+          >
+            Modos de jogo
+          </Text>
 
-          <p>
-            3. Escolha um tema.
-          </p>
-
-          <p>
-            4. Passe o celular para o leitor.
-          </p>
-
-          <p>
-            5. O sistema irá gerar uma pergunta.
-          </p>
-
-          <p>
-            6. Leia a pergunta e tente acertar.
-          </p>
-
-          <p>
-            7. Revele a resposta.
-          </p>
-
-          <p>
-            8. Continue até decidir parar.
-          </p>
-
-          <h2>Modos de jogo</h2>
-
-          <p>
-            O Generalista
-          </p>
-
-          <p>
-            Mestre dos Magos
-          </p>
-
-          <p>
-            Copa do Mundo
-          </p>
-
-          <p>
-            texto teste
-          </p>
-        </div>
+          <Text>• O Generalista</Text>
+          <Text>• Mestre dos Magos</Text>
+          <Text>• Copa do Mundo</Text>
+          <Text>• Generalista Sortudo</Text>
+          <Text>• O Especialista</Text>
+          <Text>• O Caminho Para a Vitória</Text>
+          <Text>• Essa é a sua área</Text>
+          <Text>• Cartas na mesa</Text>
+          <Text>• O Especialista Sortudo</Text>
+        </ScrollView>
 
         <Button
           cor="white"
           escrever="Retornar ao Menu Inicial"
           onPress={() => mudarPagina('home')}
         />
-      </div>
+      </View>
     </Fundo>
   )
 }

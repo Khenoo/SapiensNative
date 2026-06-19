@@ -2,18 +2,40 @@ import Fundo from '../../components/Fundo'
 import Button from '../../components/Button'
 import TextBubble from '../../components/TextBubble'
 
-function SelecTemaRoxo({ mudarPagina }) {
+import { View } from 'react-native'
+
+import perguntas from '../../data/perguntas'
+
+function SelecTemaRoxo({
+  mudarPagina,
+  setPerguntaAtual,
+  setRespostaAtual,
+  setCorPergunta
+}) {
+
+  function gerarPergunta(listaPerguntas) {
+    const sorteada =
+      listaPerguntas[
+        Math.floor(Math.random() * listaPerguntas.length)
+      ]
+
+    setPerguntaAtual(sorteada.pergunta)
+    setRespostaAtual(sorteada.resposta)
+
+    setCorPergunta('rgba(170, 80, 255, 1)')
+
+    mudarPagina('atencao')
+  }
+
   return (
     <Fundo>
-      <div
+      <View
         style={{
           flex: 1,
           width: '100%',
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'space-between',
           alignItems: 'center',
-          padding: '20px',
+          justifyContent: 'space-between',
+          padding: 20,
         }}
       >
         <TextBubble
@@ -22,34 +44,45 @@ function SelecTemaRoxo({ mudarPagina }) {
           texto='Selecione um dos temas de Entretenimento.'
         />
 
-        <div
+        <View
           style={{
-            display: 'flex',
+            width: '100%',
+            flexDirection: 'row',
             flexWrap: 'wrap',
             justifyContent: 'center',
-            gap: '12px',
           }}
         >
-          <Button cor="rgba(170, 80, 255, 1)"
-           escrever="Cinema"
-           onPress={() => mudarPagina('atencao')} />
-          <Button cor="rgba(170, 80, 255, 1)"
-           escrever="Séries"
-           onPress={() => mudarPagina('atencao')} />
-          <Button cor="rgba(170, 80, 255, 1)"
-           escrever="Animes"
-           onPress={() => mudarPagina('atencao')} />
-          <Button cor="rgba(170, 80, 255, 1)"
-           escrever="Jogos"
-           onPress={() => mudarPagina('atencao')} />
-        </div>
+          <Button
+            cor='rgba(170, 80, 255, 1)'
+            escrever='Cinema'
+            onPress={() => gerarPergunta(perguntas.cinema)}
+          />
+
+          <Button
+            cor='rgba(170, 80, 255, 1)'
+            escrever='Televisão'
+            onPress={() => gerarPergunta(perguntas.televisao)}
+          />
+
+          <Button
+            cor='rgba(170, 80, 255, 1)'
+            escrever='Música'
+            onPress={() => gerarPergunta(perguntas.musica)}
+          />
+
+          <Button
+            cor='rgba(170, 80, 255, 1)'
+            escrever='Séries'
+            onPress={() => gerarPergunta(perguntas.series)}
+          />
+        </View>
 
         <Button
-          cor="white"
-          escrever="Retornar ao Menu Principal"
+          cor='white'
+          escrever='Retornar ao Menu Principal'
           onPress={() => mudarPagina('home')}
         />
-      </div>
+      </View>
     </Fundo>
   )
 }

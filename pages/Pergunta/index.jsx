@@ -1,27 +1,32 @@
+import { View } from 'react-native'
+
 import Button from '../../components/Button'
 import Question from '../../components/Question'
 import FundoQuestion from '../../components/FundoQuestion'
 
-function Pergunta({ mudarPagina }) {
+function Pergunta({
+  mudarPagina,
+  pergunta,
+  cor
+}) {
   return (
-    <Question>
-      <FundoQuestion pergunta='Qual é a parte do computador responsável por conectar e interligar todos os componentes do computador entre si?' />
-
-      <div style={{
-        flex: 1,
-        justifyContent: 'center',
-        marginLeft: '25px',
-        alignItems:'center',
-        marginHorizontal: 'auto',
-        marginTop: 'auto'
-      }}>
-
-      <Button
-        cor='white'
-        escrever='Ir Para a Resposta'
-        onPress={() => mudarPagina('resposta')}
+    <Question cor={cor}>
+      <FundoQuestion
+        pergunta={pergunta}
       />
-      </div>
+
+      <View
+        style={{
+          marginBottom: 30,
+          alignItems: 'center',
+        }}
+      >
+        <Button
+          cor='white'
+          escrever='Ir Para a Resposta'
+          onPress={() => mudarPagina('resposta')}
+        />
+      </View>
     </Question>
   )
 }

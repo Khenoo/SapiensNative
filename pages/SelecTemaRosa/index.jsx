@@ -2,18 +2,40 @@ import Fundo from '../../components/Fundo'
 import Button from '../../components/Button'
 import TextBubble from '../../components/TextBubble'
 
-function SelecTemaRosa({ mudarPagina }) {
+import { View } from 'react-native'
+
+import perguntas from '../../data/perguntas'
+
+function SelecTemaRosa({
+  mudarPagina,
+  setPerguntaAtual,
+  setRespostaAtual,
+  setCorPergunta
+}) {
+
+  function gerarPergunta(listaPerguntas) {
+    const sorteada =
+      listaPerguntas[
+        Math.floor(Math.random() * listaPerguntas.length)
+      ]
+
+    setPerguntaAtual(sorteada.pergunta)
+    setRespostaAtual(sorteada.resposta)
+
+    setCorPergunta('pink')
+
+    mudarPagina('atencao')
+  }
+
   return (
     <Fundo>
-      <div
+      <View
         style={{
           flex: 1,
           width: '100%',
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'space-between',
           alignItems: 'center',
-          padding: '20px',
+          justifyContent: 'space-between',
+          padding: 20,
         }}
       >
         <TextBubble
@@ -22,34 +44,45 @@ function SelecTemaRosa({ mudarPagina }) {
           texto='Selecione um dos temas de Conhecimentos Gerais.'
         />
 
-        <div
+        <View
           style={{
-            display: 'flex',
+            width: '100%',
+            flexDirection: 'row',
             flexWrap: 'wrap',
             justifyContent: 'center',
-            gap: '12px',
           }}
         >
-          <Button cor="pink"
-           escrever="Curiosidades"
-           onPress={() => mudarPagina('atencao')} />
-          <Button cor="pink"
-           escrever="Mundo"
-           onPress={() => mudarPagina('atencao')} />
-          <Button cor="pink"
-           escrever="Atualidades"
-           onPress={() => mudarPagina('atencao')} />
-          <Button cor="pink"
-           escrever="Mistérios"
-           onPress={() => mudarPagina('atencao')} />
-        </div>
+          <Button
+            cor='pink'
+            escrever='Cultura'
+            onPress={() => gerarPergunta(perguntas.cultura)}
+          />
+
+          <Button
+            cor='pink'
+            escrever='Esoterismo'
+            onPress={() => gerarPergunta(perguntas.esoterismo)}
+          />
+
+          <Button
+            cor='pink'
+            escrever='Religião'
+            onPress={() => gerarPergunta(perguntas.religiao)}
+          />
+
+          <Button
+            cor='pink'
+            escrever='Artes'
+            onPress={() => gerarPergunta(perguntas.artes)}
+          />
+        </View>
 
         <Button
-          cor="white"
-          escrever="Retornar ao Menu Principal"
+          cor='white'
+          escrever='Retornar ao Menu Principal'
           onPress={() => mudarPagina('home')}
         />
-      </div>
+      </View>
     </Fundo>
   )
 }

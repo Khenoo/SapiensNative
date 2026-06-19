@@ -1,87 +1,76 @@
+import { View, Text } from 'react-native'
+
 import Fundo from '../../components/Fundo'
 import Button from '../../components/Button'
-import TextBubble from '../../components/TextBubble'
 
 function Atencao({ mudarPagina }) {
   return (
     <Fundo>
-      <div
+      <View
         style={{
+          flex: 1,
           width: '100%',
-          height: '100vh',
-
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'space-between',
           alignItems: 'center',
-
-          padding: '20px',
-          boxSizing: 'border-box',
+          justifyContent: 'space-between',
+          padding: 20,
         }}
       >
-        <div />
-        <div
+        <View />
+
+        <View
           style={{
             width: '90%',
-            maxWidth: '700px',
-
             backgroundColor: 'rgba(255,255,224,0.95)',
-
-            border: 'dotted',
-            borderRadius: '20px',
-
-            padding: '30px',
-
-            textAlign: 'center',
-
-            display: 'flex',
-            flexDirection: 'column',
+            borderWidth: 2,
+            borderRadius: 20,
+            padding: 30,
             alignItems: 'center',
-            gap: '20px',
           }}
         >
-          <h1
+          <Text
             style={{
-              margin: 0,
               color: 'red',
-              fontSize: '40px',
+              fontSize: 40,
+              fontWeight: 'bold',
+              marginBottom: 20,
             }}
           >
             ATENÇÃO!!!
-          </h1>
+          </Text>
 
-          <p
+          <Text
             style={{
-              fontSize: '24px',
-              margin: 0,
+              fontSize: 24,
+              textAlign: 'center',
+              marginBottom: 20,
             }}
           >
             Entregue o celular para o leitor das perguntas
-          </p>
+          </Text>
 
-          <p
+          <Text
             style={{
-              fontSize: '18px',
+              fontSize: 18,
               textAlign: 'center',
-              maxWidth: '500px',
+              marginBottom: 20,
             }}
           >
-            A pergunta será gerada. Caso o celular esteja
-            com o jogador, passe-o para o leitor.
-          </p>
+            A pergunta será gerada. Caso o celular esteja com o jogador, passe-o para o leitor.
+          </Text>
 
           <Button
             cor="white"
             escrever="Continuar Para Pergunta"
             onPress={() => mudarPagina('pergunta')}
           />
-        </div>
+        </View>
+
         <Button
           cor="white"
           escrever="Retornar ao Menu Inicial"
           onPress={() => mudarPagina('home')}
         />
-      </div>
+      </View>
     </Fundo>
   )
 }

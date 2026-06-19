@@ -1,48 +1,52 @@
 import { View, Text } from 'react-native'
 
-function fundoQuestion(props){
+function FundoQuestion(props) {
+  const pergunta = props.pergunta
+  const resposta = props.resposta
 
-    const pergunta = props.pergunta
-    const resposta = props.resposta
+  return (
+    <View
+      style={{
+        flex: 1,
+        width: '90%',
+        backgroundColor: 'lightyellow',
 
-return(
-    <View style={{
-            flex: 1,
-            backgroundColor: 'lightyellow',
-            height: '70%',
-            width:  '80%',
-            border: 'dotted',
-            justifyContent: 'center',
-            padding: '30px',
-            alignItems:'center',
-            marginHorizontal: 'auto',
-            marginTop: '20%'
-        }}>
+        borderWidth: 2,
+
+        justifyContent: 'center',
+        alignItems: 'center',
+
+        padding: 20,
+
+        marginTop: 20,
+        marginBottom: 20,
+      }}
+    >
+      <Text
+        style={{
+          fontSize: 18,
+          textAlign: 'center',
+          width: '90%',
+          lineHeight: 28,
+        }}
+      >
+        {pergunta}
+      </Text>
+
+      {resposta && (
         <Text
-            style={{
-                fontSize: 18,
-                textAlign: 'center',
-                width: '90%',
-                lineHeight: 28,
-            }}
+          style={{
+            marginTop: 40,
+            fontSize: 36,
+            textAlign: 'center',
+            width: '90%',
+          }}
         >
-            {pergunta}
-            
+          {resposta}
         </Text>
-        <Text
-            style={{
-                marginTop: '50%',
-                fontSize: 36,
-                textAlign: 'center',
-                width: '90%',
-                lineHeight: 28,
-            }}
-        >
-            {resposta}
-            
-        </Text>
-</View>
-
-)
+      )}
+    </View>
+  )
 }
-export default fundoQuestion
+
+export default FundoQuestion

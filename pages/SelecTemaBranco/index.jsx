@@ -2,18 +2,40 @@ import Fundo from '../../components/Fundo'
 import Button from '../../components/Button'
 import TextBubble from '../../components/TextBubble'
 
-function SelecTemaBranco({ mudarPagina }) {
+import { View } from 'react-native'
+
+import perguntas from '../../data/perguntas'
+
+function SelecTemaBranco({
+  mudarPagina,
+  setPerguntaAtual,
+  setRespostaAtual,
+  setCorPergunta
+}) {
+
+  function gerarPergunta(listaPerguntas) {
+    const sorteada =
+      listaPerguntas[
+        Math.floor(Math.random() * listaPerguntas.length)
+      ]
+
+    setPerguntaAtual(sorteada.pergunta)
+    setRespostaAtual(sorteada.resposta)
+
+    setCorPergunta('white')
+
+    mudarPagina('atencao')
+  }
+
   return (
     <Fundo>
-      <div
+      <View
         style={{
           flex: 1,
           width: '100%',
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'space-between',
           alignItems: 'center',
-          padding: '20px',
+          justifyContent: 'space-between',
+          padding: 20,
         }}
       >
         <TextBubble
@@ -22,34 +44,45 @@ function SelecTemaBranco({ mudarPagina }) {
           texto='Selecione um dos temas de Ciências Exatas.'
         />
 
-        <div
+        <View
           style={{
-            display: 'flex',
+            width: '100%',
+            flexDirection: 'row',
             flexWrap: 'wrap',
             justifyContent: 'center',
-            gap: '12px',
           }}
         >
-          <Button cor="white"
-           escrever="Matemática"
-           onPress={() => mudarPagina('atencao')} />
-          <Button cor="white"
-           escrever="Lógica"
-           onPress={() => mudarPagina('atencao')} />
-          <Button cor="white"
-           escrever="Tecnologia"
-           onPress={() => mudarPagina('atencao')} />
-          <Button cor="white"
-           escrever="Computação"
-           onPress={() => mudarPagina('atencao')} />
-        </div>
+          <Button
+            cor='white'
+            escrever='Matemática e Lógica'
+            onPress={() => gerarPergunta(perguntas.matematicaLogica)}
+          />
+
+          <Button
+            cor='white'
+            escrever='Física e Astronomia'
+            onPress={() => gerarPergunta(perguntas.fisicaAstronomia)}
+          />
+
+          <Button
+            cor='white'
+            escrever='Engenharias'
+            onPress={() => gerarPergunta(perguntas.engenharias)}
+          />
+
+          <Button
+            cor='white'
+            escrever='Informática'
+            onPress={() => gerarPergunta(perguntas.informatica)}
+          />
+        </View>
 
         <Button
-          cor="white"
-          escrever="Retornar ao Menu Principal"
+          cor='white'
+          escrever='Retornar ao Menu Principal'
           onPress={() => mudarPagina('home')}
         />
-      </div>
+      </View>
     </Fundo>
   )
 }

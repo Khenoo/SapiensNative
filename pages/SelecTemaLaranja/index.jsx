@@ -2,21 +2,43 @@ import Fundo from '../../components/Fundo'
 import Button from '../../components/Button'
 import TextBubble from '../../components/TextBubble'
 
-function SelecTemaLaranja({ mudarPagina }) {
+import { View } from 'react-native'
+
+import  perguntas  from '../../data/perguntas.js'
+
+function SelecTemaLaranja({
+  mudarPagina,
+  setPerguntaAtual,
+  setRespostaAtual,
+  setCorPergunta
+}) {
+
+  function gerarPergunta(listaPerguntas) {
+    const sorteada =
+      listaPerguntas[
+        Math.floor(
+          Math.random() *
+          listaPerguntas.length
+        )
+      ]
+
+    setPerguntaAtual(sorteada.pergunta)
+    setRespostaAtual(sorteada.resposta)
+
+    setCorPergunta('orange')
+
+    mudarPagina('atencao')
+  }
+
   return (
     <Fundo>
-      <div
+      <View
         style={{
           flex: 1,
           width: '100%',
-
-          display: 'flex',
-          flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'space-between',
-
-          padding: '20px',
-          boxSizing: 'border-box',
+          padding: 20,
         }}
       >
         <TextBubble
@@ -25,40 +47,61 @@ function SelecTemaLaranja({ mudarPagina }) {
           texto='Para continuar, selecione um dos temas da grande área de Ciências Humanas.'
         />
 
-        <div
+        <View
           style={{
-            display: 'flex',
+            width: '100%',
+            flexDirection: 'row',
             flexWrap: 'wrap',
             justifyContent: 'center',
-            alignItems: 'center',
-            gap: '12px',
-            width: '100%',
-            maxWidth: '1000px',
           }}
         >
           <Button
-            cor="orange"
-            escrever="Geografia"
-            onPress={() => mudarPagina('atencao')}
+            cor='orange'
+            escrever='Geografia'
+            onPress={() =>
+              gerarPergunta(
+                perguntas.geografia
+              )
+            }
           />
 
-          <Button cor="orange"
-           escrever="História"
-           onPress={() => mudarPagina('atencao')} />
-          <Button cor="orange"
-           escrever="Filosofia"
-           onPress={() => mudarPagina('atencao')} />
-          <Button cor="orange"
-           escrever="Socio, Psico e Educação"
-           onPress={() => mudarPagina('atencao')} />
-        </div>
+          <Button
+            cor='orange'
+            escrever='História'
+            onPress={() =>
+              gerarPergunta(
+                perguntas.historia
+              )
+            }
+          />
+
+          <Button
+            cor='orange'
+            escrever='Filosofia'
+            onPress={() =>
+              gerarPergunta(
+                perguntas.filosofia
+              )
+            }
+          />
+
+          <Button
+            cor='orange'
+            escrever='Socio, Psico e Educação'
+            onPress={() =>
+              gerarPergunta(
+                perguntas.sociologia
+              )
+            }
+          />
+        </View>
 
         <Button
-          cor="white"
-          escrever="Retornar ao Menu Principal"
+          cor='white'
+          escrever='Retornar ao Menu Principal'
           onPress={() => mudarPagina('home')}
         />
-      </div>
+      </View>
     </Fundo>
   )
 }

@@ -2,18 +2,40 @@ import Fundo from '../../components/Fundo'
 import Button from '../../components/Button'
 import TextBubble from '../../components/TextBubble'
 
-function SelecTemaVerde({ mudarPagina }) {
+import { View } from 'react-native'
+
+import perguntas from '../../data/perguntas'
+
+function SelecTemaVerde({
+  mudarPagina,
+  setPerguntaAtual,
+  setRespostaAtual,
+  setCorPergunta
+}) {
+
+  function gerarPergunta(listaPerguntas) {
+    const sorteada =
+      listaPerguntas[
+        Math.floor(Math.random() * listaPerguntas.length)
+      ]
+
+    setPerguntaAtual(sorteada.pergunta)
+    setRespostaAtual(sorteada.resposta)
+
+    setCorPergunta('green')
+
+    mudarPagina('atencao')
+  }
+
   return (
     <Fundo>
-      <div
+      <View
         style={{
           flex: 1,
           width: '100%',
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'space-between',
           alignItems: 'center',
-          padding: '20px',
+          justifyContent: 'space-between',
+          padding: 20,
         }}
       >
         <TextBubble
@@ -22,34 +44,45 @@ function SelecTemaVerde({ mudarPagina }) {
           texto='Selecione um dos temas de Ciências Naturais.'
         />
 
-        <div
+        <View
           style={{
-            display: 'flex',
+            width: '100%',
+            flexDirection: 'row',
             flexWrap: 'wrap',
             justifyContent: 'center',
-            gap: '12px',
           }}
         >
-          <Button cor="green"
-           escrever="Biologia"
-           onPress={() => mudarPagina('atencao')} />
-          <Button cor="green"
-           escrever="Química"
-           onPress={() => mudarPagina('atencao')} />
-          <Button cor="green"
-           escrever="Física"
-           onPress={() => mudarPagina('atencao')} />
-          <Button cor="green"
-           escrever="Astronomia"
-           onPress={() => mudarPagina('atencao')} />
-        </div>
+          <Button
+            cor='green'
+            escrever='Corpo Humano e Saúde'
+            onPress={() => gerarPergunta(perguntas.corpoHumanoSaude)}
+          />
+
+          <Button
+            cor='green'
+            escrever='Meio Ambiente'
+            onPress={() => gerarPergunta(perguntas.meioAmbiente)}
+          />
+
+          <Button
+            cor='green'
+            escrever='Seres Vivos'
+            onPress={() => gerarPergunta(perguntas.seresVivos)}
+          />
+
+          <Button
+            cor='green'
+            escrever='Química'
+            onPress={() => gerarPergunta(perguntas.quimica)}
+          />
+        </View>
 
         <Button
-          cor="white"
-          escrever="Retornar ao Menu Principal"
+          cor='white'
+          escrever='Retornar ao Menu Principal'
           onPress={() => mudarPagina('home')}
         />
-      </div>
+      </View>
     </Fundo>
   )
 }
