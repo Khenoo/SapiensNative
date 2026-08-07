@@ -11,8 +11,6 @@ function SegundaPag({ mudarPagina }) {
         style={{
           flex: 1,
           width: '100%',
-          alignItems: 'center',
-          justifyContent: 'space-between',
           padding: 20,
         }}
       >
@@ -24,66 +22,82 @@ function SegundaPag({ mudarPagina }) {
 
         <View
           style={{
-            flexDirection: 'row',
-            flexWrap: 'wrap',
+            flex: 1,
             justifyContent: 'center',
-            width: '100%',
+            alignItems: 'center',
+          }}
+        >
+          <View
+            style={{
+              width: '100%',
+              flexDirection: 'row',
+              flexWrap: 'wrap',
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}
+          >
+            <Button
+              cor="orange"
+              escrever="Ciências Humanas"
+              onPress={() => mudarPagina('temaLaranja')}
+            />
+
+            <Button
+              cor="yellow"
+              escrever="Línguas"
+              onPress={() => mudarPagina('temaAmarelo')}
+            />
+
+            <Button
+              cor="rgba(170,80,255,1)"
+              escrever="Entretenimento"
+              onPress={() => mudarPagina('temaRoxo')}
+            />
+
+            <Button
+              cor="white"
+              escrever="Ciências Exatas"
+              onPress={() => mudarPagina('temaBranco')}
+            />
+
+            <Button
+              cor="rgba(255,75,75,1)"
+              escrever="Ciências Sociais Aplicadas"
+              onPress={() => mudarPagina('temaVermelho')}
+            />
+
+            <Button
+              cor="pink"
+              escrever="Conhecimentos Gerais"
+              onPress={() => mudarPagina('temaRosa')}
+            />
+
+            <Button
+              cor="rgba(80,170,255,1)"
+              escrever="Lazer"
+              onPress={() => mudarPagina('temaAzul')}
+            />
+
+            <Button
+              cor="green"
+              escrever="Ciências Naturais"
+              onPress={() => mudarPagina('temaVerde')}
+            />
+          </View>
+        </View>
+
+        <View
+          style={{
+            alignItems: 'center',
+            marginBottom: 10,
           }}
         >
           <Button
-            cor="orange"
-            escrever="Ciências Humanas"
-            onPress={() => mudarPagina('temaLaranja')}
-          />
-
-          <Button
-            cor="yellow"
-            escrever="Linguas"
-            onPress={() => mudarPagina('temaAmarelo')}
-          />
-
-          <Button
-            cor="rgba(170,80,255,1)"
-            escrever="Entretenimento"
-            onPress={() => mudarPagina('temaRoxo')}
-          />
-
-          <Button
             cor="white"
-            escrever="Ciências Exatas"
-            onPress={() => mudarPagina('temaBranco')}
-          />
-
-          <Button
-            cor="rgba(255,75,75,1)"
-            escrever="Ciências Sociais Aplicadas"
-            onPress={() => mudarPagina('temaVermelho')}
-          />
-
-          <Button
-            cor="pink"
-            escrever="Conhecimentos Gerais"
-            onPress={() => mudarPagina('temaRosa')}
-          />
-
-          <Button
-            cor="rgba(80,170,255,1)"
-            escrever="Lazer"
-            onPress={() => mudarPagina('temaAzul')}
-          />
-
-          <Button
-            cor="green"
-            escrever="Ciências Naturais"
-            onPress={() => mudarPagina('temaVerde')}
+            escrever="Retornar ao Menu Inicial"
+            onPress={() => mudarPagina('home')}
           />
         </View>
-
-        <Button
-          cor="white"
-          escrever="Retornar ao Menu Inicial"
-          onPress={() => mudarPagina('home')}
-        />
       </View>
     </Fundo>
   )
