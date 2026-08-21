@@ -1,32 +1,13 @@
 import Fundo from '../../components/Fundo'
 import Button from '../../components/Button'
-import TextBubble from '../../components/TextBubble'
+import TextBubble from '@/components/TextBubble'
 
 import { View, ScrollView } from 'react-native'
 
-import perguntas from '../../data/perguntas'
-
 function SelecTemaLaranja({
   mudarPagina,
-  setPerguntaAtual,
-  setRespostaAtual,
-  setCorPergunta
+  gerarPergunta
 }) {
-
-  function gerarPergunta(listaPerguntas) {
-    const sorteada =
-      listaPerguntas[
-        Math.floor(Math.random() * listaPerguntas.length)
-      ]
-
-    setPerguntaAtual(sorteada.pergunta)
-    setRespostaAtual(sorteada.resposta)
-
-    setCorPergunta('orange')
-
-    mudarPagina('atencao')
-  }
-
   return (
     <Fundo>
       <View
@@ -39,58 +20,62 @@ function SelecTemaLaranja({
         <ScrollView
           contentContainerStyle={{
             flexGrow: 1,
+            justifyContent: 'center',
             alignItems: 'center',
-            justifyContent: 'space-between',
           }}
-          showsVerticalScrollIndicator={false}
         >
-
           <TextBubble
-            cor='orange'
-            titulo='Seleção de Tema'
-            texto='Para continuar, selecione um dos temas da grande área de Ciências Humanas.'
+            cor="orange"
+            titulo="Seleção de Tema"
+            texto="Selecione um tema."
           />
-
           <View
             style={{
               width: '100%',
               flexDirection: 'row',
               flexWrap: 'wrap',
               justifyContent: 'center',
+              alignItems: 'center',
             }}
           >
             <Button
-              cor='orange'
-              escrever='Geografia'
-              onPress={() => gerarPergunta(perguntas.geografia)}
+              cor="orange"
+              escrever="Geografia"
+              onPress={() => gerarPergunta('geografia', 'orange')}
             />
 
             <Button
-              cor='orange'
-              escrever='História'
-              onPress={() => gerarPergunta(perguntas.historia)}
+              cor="orange"
+              escrever="História"
+              onPress={() => gerarPergunta('historia', 'orange')}
             />
 
             <Button
-              cor='orange'
-              escrever='Filosofia'
-              onPress={() => gerarPergunta(perguntas.filosofia)}
+              cor="orange"
+              escrever="Filosofia"
+              onPress={() => gerarPergunta('filosofia', 'orange')}
             />
 
             <Button
-              cor='orange'
-              escrever='Sócio, Psico e Educação'
-              onPress={() => gerarPergunta(perguntas.socioPsicoEducacao)}
+              cor="orange"
+              escrever="Socio, Psico e Educação"
+              onPress={() => gerarPergunta('socioPsicoEducacao', 'orange')}
             />
           </View>
+        </ScrollView>
 
+        <View
+          style={{
+            alignItems: 'center',
+            marginBottom: 10,
+          }}
+        >
           <Button
-            cor='white'
-            escrever='Retornar ao Menu Principal'
+            cor="white"
+            escrever="Retornar ao Menu Principal"
             onPress={() => mudarPagina('home')}
           />
-
-        </ScrollView>
+        </View>
       </View>
     </Fundo>
   )

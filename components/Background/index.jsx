@@ -10,8 +10,7 @@ const Container = styled.View`
 
 const Conteudo = styled.View`
   flex: 1;
-  align-items: center;
-  justify-content: center;
+  width: 100%;
 `
 
 function Background({ children }) {
@@ -24,8 +23,6 @@ function Background({ children }) {
           flex: 1,
           width: '100%',
           height: '100%',
-          justifyContent: 'center',
-          alignItems: 'center',
         }}
       >
         <Conteudo>

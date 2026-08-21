@@ -1,32 +1,13 @@
 import Fundo from '../../components/Fundo'
 import Button from '../../components/Button'
-import TextBubble from '../../components/TextBubble'
+import TextBubble from '@/components/TextBubble'
 
 import { View, ScrollView } from 'react-native'
 
-import perguntas from '../../data/perguntas'
-
 function SelecTemaBranco({
   mudarPagina,
-  setPerguntaAtual,
-  setRespostaAtual,
-  setCorPergunta
+  gerarPergunta
 }) {
-
-  function gerarPergunta(listaPerguntas) {
-    const sorteada =
-      listaPerguntas[
-        Math.floor(Math.random() * listaPerguntas.length)
-      ]
-
-    setPerguntaAtual(sorteada.pergunta)
-    setRespostaAtual(sorteada.resposta)
-
-    setCorPergunta('white')
-
-    mudarPagina('atencao')
-  }
-
   return (
     <Fundo>
       <View
@@ -39,58 +20,62 @@ function SelecTemaBranco({
         <ScrollView
           contentContainerStyle={{
             flexGrow: 1,
+            justifyContent: 'center',
             alignItems: 'center',
-            justifyContent: 'space-between',
           }}
-          showsVerticalScrollIndicator={false}
         >
-
           <TextBubble
-            cor='white'
-            titulo='Seleção de Tema'
-            texto='Selecione um dos temas da área de Ciências Exatas.'
+            cor="white"
+            titulo="Seleção de Tema"
+            texto="Selecione um tema."
           />
-
           <View
             style={{
               width: '100%',
               flexDirection: 'row',
               flexWrap: 'wrap',
               justifyContent: 'center',
+              alignItems: 'center',
             }}
           >
             <Button
-              cor='white'
-              escrever='Matemática e Lógica'
-              onPress={() => gerarPergunta(perguntas.matematicaLogica)}
+              cor="white"
+              escrever="Matemática e Lógica"
+              onPress={() => gerarPergunta('matematicaLogica', 'white')}
             />
 
             <Button
-              cor='white'
-              escrever='Física e Astronomia'
-              onPress={() => gerarPergunta(perguntas.fisicaAstronomia)}
+              cor="white"
+              escrever="Física e Astronomia"
+              onPress={() => gerarPergunta('fisicaAstronomia', 'white')}
             />
 
             <Button
-              cor='white'
-              escrever='Engenharias'
-              onPress={() => gerarPergunta(perguntas.engenharias)}
+              cor="white"
+              escrever="Engenharias"
+              onPress={() => gerarPergunta('engenharias', 'white')}
             />
 
             <Button
-              cor='white'
-              escrever='Informática'
-              onPress={() => gerarPergunta(perguntas.informatica)}
+              cor="white"
+              escrever="Informática"
+              onPress={() => gerarPergunta('informatica', 'white')}
             />
           </View>
+        </ScrollView>
 
+        <View
+          style={{
+            alignItems: 'center',
+            marginBottom: 10,
+          }}
+        >
           <Button
-            cor='white'
-            escrever='Retornar ao Menu Principal'
+            cor="white"
+            escrever="Retornar ao Menu Principal"
             onPress={() => mudarPagina('home')}
           />
-
-        </ScrollView>
+        </View>
       </View>
     </Fundo>
   )

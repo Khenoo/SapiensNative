@@ -1,32 +1,13 @@
 import Fundo from '../../components/Fundo'
 import Button from '../../components/Button'
-import TextBubble from '../../components/TextBubble'
+import TextBubble from '@/components/TextBubble'
 
 import { View, ScrollView } from 'react-native'
 
-import perguntas from '../../data/perguntas'
-
 function SelecTemaVerde({
   mudarPagina,
-  setPerguntaAtual,
-  setRespostaAtual,
-  setCorPergunta
+  gerarPergunta
 }) {
-
-  function gerarPergunta(listaPerguntas) {
-    const sorteada =
-      listaPerguntas[
-        Math.floor(Math.random() * listaPerguntas.length)
-      ]
-
-    setPerguntaAtual(sorteada.pergunta)
-    setRespostaAtual(sorteada.resposta)
-
-    setCorPergunta('green')
-
-    mudarPagina('atencao')
-  }
-
   return (
     <Fundo>
       <View
@@ -39,58 +20,62 @@ function SelecTemaVerde({
         <ScrollView
           contentContainerStyle={{
             flexGrow: 1,
+            justifyContent: 'center',
             alignItems: 'center',
-            justifyContent: 'space-between',
           }}
-          showsVerticalScrollIndicator={false}
         >
-
           <TextBubble
-            cor='green'
-            titulo='Seleção de Tema'
-            texto='Selecione um dos temas da área de Ciências Naturais.'
+            cor="green"
+            titulo="Seleção de Tema"
+            texto="Selecione um tema."
           />
-
           <View
             style={{
               width: '100%',
               flexDirection: 'row',
               flexWrap: 'wrap',
               justifyContent: 'center',
+              alignItems: 'center',
             }}
           >
             <Button
-              cor='green'
-              escrever='Corpo Humano e Saúde'
-              onPress={() => gerarPergunta(perguntas.corpoHumanoSaude)}
+              cor="green"
+              escrever="Corpo Humano e Saúde"
+              onPress={() => gerarPergunta('corpoHumanoSaude', 'green')}
             />
 
             <Button
-              cor='green'
-              escrever='Meio Ambiente'
-              onPress={() => gerarPergunta(perguntas.meioAmbiente)}
+              cor="green"
+              escrever="Meio Ambiente"
+              onPress={() => gerarPergunta('meioAmbiente', 'green')}
             />
 
             <Button
-              cor='green'
-              escrever='Seres Vivos'
-              onPress={() => gerarPergunta(perguntas.seresVivos)}
+              cor="green"
+              escrever="Seres Vivos"
+              onPress={() => gerarPergunta('seresVivos', 'green')}
             />
 
             <Button
-              cor='green'
-              escrever='Química'
-              onPress={() => gerarPergunta(perguntas.quimica)}
+              cor="green"
+              escrever="Química"
+              onPress={() => gerarPergunta('quimica', 'green')}
             />
           </View>
+        </ScrollView>
 
+        <View
+          style={{
+            alignItems: 'center',
+            marginBottom: 10,
+          }}
+        >
           <Button
-            cor='white'
-            escrever='Retornar ao Menu Principal'
+            cor="white"
+            escrever="Retornar ao Menu Principal"
             onPress={() => mudarPagina('home')}
           />
-
-        </ScrollView>
+        </View>
       </View>
     </Fundo>
   )

@@ -16,16 +16,54 @@ import SelecTemaVerde from '@/pages/SelecTemaVerde'
 import SelecTemaAmarelo from '@/pages/SelecTemaAmarelo'
 import SelecTemaBranco from '@/pages/SelecTemaBranco'
 import SelecTemaRosa from '@/pages/SelecTemaRosa'
+import { SQLiteProvider } from 'expo-sqlite'
+import { useSQLiteContext } from 'expo-sqlite'
 
-function App() {
+import {
+  buscarPergunta,
+  reciclarPerguntas,
+} from '../../database/perguntas'
+
+function AppContent() {
   const [pagina, setPagina] = useState('home')
 
   const [corPergunta, setCorPergunta] = useState('orange')
   const [perguntaAtual, setPerguntaAtual] = useState('')
   const [respostaAtual, setRespostaAtual] = useState('')
 
+  const db = useSQLiteContext()
+
+  const [categoriaAtual, setCategoriaAtual] = useState('')
+
+  async function gerarPergunta(categoria:string,
+     cor:string
+    ) {
+  const pergunta = await buscarPergunta(db, categoria)
+
+  if (!pergunta) {
+    alert('Não existem mais perguntas dessa categoria.')
+    return
+  }
+
+  setCategoriaAtual(categoria)
+  setPerguntaAtual(pergunta.pergunta)
+  setRespostaAtual(pergunta.resposta)
+  setCorPergunta(cor)
+
+  setPagina('atencao')
+  }
+
+  async function reciclarTudo() {
+  await reciclarPerguntas(db)
+
+  alert('Todas as perguntas foram recicladas!')
+}
+
   if (pagina === 'home') {
-    return <Home mudarPagina={setPagina} />
+    return <Home
+  mudarPagina={setPagina}
+  reciclarTudo={reciclarTudo}
+/>
   }
 
   if (pagina === 'tutorial') {
@@ -51,68 +89,59 @@ function App() {
   if (pagina === 'temaLaranja') {
     return (
       <SelecTemaLaranja
-        mudarPagina={setPagina}
-        setPerguntaAtual={setPerguntaAtual}
-        setRespostaAtual={setRespostaAtual}
-        setCorPergunta={setCorPergunta}
-      />
+    mudarPagina={setPagina}
+    gerarPergunta={gerarPergunta}
+    />
     )
   }
 
   if (pagina === 'temaVermelho') {
-    return <SelecTemaVermelho 
-        mudarPagina={setPagina}
-        setPerguntaAtual={setPerguntaAtual}
-        setRespostaAtual={setRespostaAtual}
-        setCorPergunta={setCorPergunta} />
+    return <SelecTemaVermelho
+    mudarPagina={setPagina}
+    gerarPergunta={gerarPergunta}
+    />
   }
 
   if (pagina === 'temaAzul') {
     return <SelecTemaAzul 
         mudarPagina={setPagina}
-        setPerguntaAtual={setPerguntaAtual}
-        setRespostaAtual={setRespostaAtual}
-        setCorPergunta={setCorPergunta} />
+        gerarPergunta={gerarPergunta}
+    />
   }
 
   if (pagina === 'temaRoxo') {
     return <SelecTemaRoxo 
         mudarPagina={setPagina}
-        setPerguntaAtual={setPerguntaAtual}
-        setRespostaAtual={setRespostaAtual}
-        setCorPergunta={setCorPergunta} />
+        gerarPergunta={gerarPergunta}
+    />
   }
 
   if (pagina === 'temaVerde') {
     return <SelecTemaVerde 
         mudarPagina={setPagina}
-        setPerguntaAtual={setPerguntaAtual}
-        setRespostaAtual={setRespostaAtual}
-        setCorPergunta={setCorPergunta} />
+        gerarPergunta={gerarPergunta}
+    />
   }
 
   if (pagina === 'temaAmarelo') {
     return <SelecTemaAmarelo 
         mudarPagina={setPagina}
-        setPerguntaAtual={setPerguntaAtual}
-        setRespostaAtual={setRespostaAtual}
-        setCorPergunta={setCorPergunta}/>
+        gerarPergunta={gerarPergunta}
+    />
   }
 
   if (pagina === 'temaBranco') {
     return <SelecTemaBranco 
         mudarPagina={setPagina}
-        setPerguntaAtual={setPerguntaAtual}
-        setRespostaAtual={setRespostaAtual}
-        setCorPergunta={setCorPergunta} />
+        gerarPergunta={gerarPergunta}
+    />
   }
 
   if (pagina === 'temaRosa') {
     return <SelecTemaRosa 
         mudarPagina={setPagina}
-        setPerguntaAtual={setPerguntaAtual}
-        setRespostaAtual={setRespostaAtual}
-        setCorPergunta={setCorPergunta} />
+        gerarPergunta={gerarPergunta}
+    />
   }
 
   if (pagina === 'atencao') {
@@ -132,13 +161,28 @@ function App() {
   if (pagina === 'resposta') {
     return (
       <Resposta
-        mudarPagina={setPagina}
-        pergunta={perguntaAtual}
-        resposta={respostaAtual}
-        cor={corPergunta}
+      mudarPagina={setPagina}
+      pergunta={perguntaAtual}
+      resposta={respostaAtual}
+      cor={corPergunta}
+      reciclarPerguntas={reciclarTudo}
+      gerarPergunta={gerarPergunta}
+      categoriaAtual={categoriaAtual}
       />
     )
   }
 }
 
-export default App
+export default function App() {
+  return (
+    <SQLiteProvider
+      databaseName="perguntas.db"
+      assetSource={{
+        assetId: require('../../assets/database/perguntas.db'),
+        forceOverwrite: false,
+      }}
+    >
+      <AppContent />
+    </SQLiteProvider>
+  )
+}

@@ -8,7 +8,10 @@ function Resposta({
   mudarPagina,
   pergunta,
   resposta,
-  cor
+  cor,
+  reciclarPerguntas,
+  gerarPergunta,
+  categoriaAtual,
 }) {
   return (
     <Question cor={cor}>
@@ -24,20 +27,20 @@ function Resposta({
         }}
       >
         <Button
-          cor='white'
-          escrever='Voltar para a pergunta'
+          cor="white"
+          escrever="Voltar para a pergunta"
           onPress={() => mudarPagina('pergunta')}
         />
 
         <Button
-          cor='white'
-          escrever='Gerar Outra Pergunta'
-          onPress={() => mudarPagina('pergunta')}
+          cor="white"
+          escrever="Gerar Outra Pergunta"
+          onPress={() => gerarPergunta(categoriaAtual, cor)}
         />
 
         <Button
-          cor='white'
-          escrever='Voltar ao Menu'
+          cor="white"
+          escrever="Voltar ao Menu"
           onPress={() => mudarPagina('home')}
         />
       </View>

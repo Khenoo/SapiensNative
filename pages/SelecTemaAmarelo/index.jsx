@@ -1,32 +1,13 @@
-import { View, ScrollView } from 'react-native'
-
 import Fundo from '../../components/Fundo'
 import Button from '../../components/Button'
-import TextBubble from '../../components/TextBubble'
+import TextBubble from '@/components/TextBubble'
 
-import perguntas from '../../data/perguntas'
+import { View, ScrollView } from 'react-native'
 
 function SelecTemaAmarelo({
   mudarPagina,
-  setPerguntaAtual,
-  setRespostaAtual,
-  setCorPergunta
+  gerarPergunta
 }) {
-
-  function gerarPergunta(listaPerguntas) {
-    const sorteada =
-      listaPerguntas[
-        Math.floor(Math.random() * listaPerguntas.length)
-      ]
-
-    setPerguntaAtual(sorteada.pergunta)
-    setRespostaAtual(sorteada.resposta)
-
-    setCorPergunta('yellow')
-
-    mudarPagina('atencao')
-  }
-
   return (
     <Fundo>
       <View
@@ -39,56 +20,70 @@ function SelecTemaAmarelo({
         <ScrollView
           contentContainerStyle={{
             flexGrow: 1,
-            justifyContent: 'space-between',
+            justifyContent: 'center',
             alignItems: 'center',
           }}
-          showsVerticalScrollIndicator={false}
         >
           <TextBubble
             cor="yellow"
             titulo="Seleção de Tema"
             texto="Selecione um tema."
           />
-
           <View
             style={{
               width: '100%',
               flexDirection: 'row',
               flexWrap: 'wrap',
               justifyContent: 'center',
+              alignItems: 'center',
             }}
           >
             <Button
               cor="yellow"
               escrever="Língua Portuguesa"
-              onPress={() => gerarPergunta(perguntas.linguaPortuguesa)}
+              onPress={() =>
+                gerarPergunta('linguaPortuguesa', 'yellow')
+              }
             />
 
             <Button
               cor="yellow"
               escrever="Línguas Estrangeiras"
-              onPress={() => gerarPergunta(perguntas.linguasEstrangeiras)}
+              onPress={() =>
+                gerarPergunta('linguasEstrangeiras', 'yellow')
+              }
             />
 
             <Button
               cor="yellow"
               escrever="Literatura Portuguesa"
-              onPress={() => gerarPergunta(perguntas.literaturaPortuguesa)}
+              onPress={() =>
+                gerarPergunta('literaturaPortuguesa', 'yellow')
+              }
             />
 
             <Button
               cor="yellow"
               escrever="Literatura Estrangeira"
-              onPress={() => gerarPergunta(perguntas.literaturaEstrangeira)}
+              onPress={() =>
+                gerarPergunta('literaturaEstrangeira', 'yellow')
+              }
             />
           </View>
+        </ScrollView>
 
+        <View
+          style={{
+            alignItems: 'center',
+            marginBottom: 10,
+          }}
+        >
           <Button
             cor="white"
             escrever="Retornar ao Menu Principal"
             onPress={() => mudarPagina('home')}
           />
-        </ScrollView>
+        </View>
       </View>
     </Fundo>
   )
