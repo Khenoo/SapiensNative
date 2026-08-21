@@ -30,7 +30,7 @@ function CopaDoMundo({ mudarPagina }) {
           <Button
             cor="white"
             escrever="Pergunta Gerada pelo Sistema"
-            onPress={() => mudarPagina('atencao')}
+            onPress={() => mudarPagina('atencaorandom')}
           />
 
           <Button
