@@ -8,6 +8,7 @@ import SelecTemaLaranja from '@/pages/SelecTemaLaranja'
 import Pergunta from '@/pages/Pergunta'
 import Resposta from '@/pages/Resposta'
 import Atencao from '@/pages/Atencao'
+import AtencaoRandom from '@/pages/Atencaorandom'
 import CopaDoMundo from '@/pages/CopaDoMundo'
 import SelecTemaVermelho from '@/pages/SelecTemaVermelho'
 import SelecTemaAzul from '@/pages/SelecTemaAzul'
@@ -146,6 +147,11 @@ function AppContent() {
 
   if (pagina === 'atencao') {
     return <Atencao mudarPagina={setPagina} />
+  }
+  if (pagina === 'atencaorandom'){
+    return <AtencaoRandom
+    mudarPagina={setPagina}
+    gerarPergunta={gerarPergunta}/>
   }
 
   if (pagina === 'pergunta') {
