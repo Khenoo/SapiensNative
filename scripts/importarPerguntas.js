@@ -48,6 +48,8 @@ function corrigirCategoria(categoria) {
   const mapa = {
     'sociPsicoeEduc': 'socioPsicoEducacao',
     'sociPsicoEEduc': 'socioPsicoEducacao',
+    'soci,PsicoEEduc': 'socioPsicoEducacao',
+
 
     'economiaAdmini': 'economiaAdministracao',
 

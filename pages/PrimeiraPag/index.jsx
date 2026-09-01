@@ -64,7 +64,7 @@ function PrimeiraPag({ mudarPagina }) {
             <Button
               cor="white"
               escrever="Generalista Sortudo"
-              onPress={() => mudarPagina('atencao')}
+              onPress={() => mudarPagina('atencaorandom')}
             />
 
             <Button
@@ -88,7 +88,7 @@ function PrimeiraPag({ mudarPagina }) {
             <Button
               cor="white"
               escrever="O Especialista Sortudo"
-              onPress={() => mudarPagina('atencao')}
+              onPress={() => mudarPagina('atencaorandom')}
             />
           </View>
         </View>
