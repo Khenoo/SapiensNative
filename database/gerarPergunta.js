@@ -96,7 +96,7 @@ function SelecTemaLaranja({
               onPress={() =>
                 gerarPergunta({
                   db,
-                  categoria: 'socioPsicoEducacao',
+                  categoria: 'soci,PsicoEEduc',
                   cor: 'orange',
                   mudarPagina,
                   setPerguntaAtual,

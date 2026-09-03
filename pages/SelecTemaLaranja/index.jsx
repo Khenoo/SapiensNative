@@ -59,7 +59,7 @@ function SelecTemaLaranja({
             <Button
               cor="orange"
               escrever="Socio, Psico e Educação"
-              onPress={() => gerarPergunta('socioPsicoEducacao', 'orange')}
+              onPress={() => gerarPergunta('soci,PsicoEEduc', 'orange')}
             />
           </View>
         </ScrollView>

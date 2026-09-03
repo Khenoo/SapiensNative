@@ -17,7 +17,7 @@ function SegundaPag({ mudarPagina }) {
         <TextBubble
           cor="white"
           titulo="Seleção de Grande Área."
-          texto="Para continuar, selecione a grande área na qual você e seus amigos receberão a carta."
+          texto="Para continuar, selecione a grande área da qual você ou seus amigos receberão a carta."
         />
 
         <View

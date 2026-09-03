@@ -40,6 +40,12 @@ function Resposta({
 
         <Button
           cor="white"
+          escrever="Escolher Outra Área"
+          onPress={() => mudarPagina('segunda')}
+        />
+
+        <Button
+          cor="white"
           escrever="Voltar ao Menu"
           onPress={() => mudarPagina('home')}
         />

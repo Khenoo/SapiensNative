@@ -1,24 +1,60 @@
 import { Text, View } from 'react-native'
-import {useState} from 'react'
+import { useState } from 'react'
 
 import Button from '../../components/Button'
 import Fundo from '../../components/Fundo'
 
-function AtencaoRandom({ 
-    mudarPagina, 
-    gerarPergunta }) {
-        const areas = [
-            'linguasEstrangeiras', 'linguasEstrangeiras', 'literaturaPortuguesa', 'literaturaEstrangeira',
-            'infantil', 'jogosGames', 'hqMangas', 'esportes',
-            'informatica', 'engenharias', 'fisicaAstronomia', 'matematicaLogica',
-            'socioPsicoEducacao', 'filosofia', 'historia', 'geografia',
-            'artes', 'religiao', 'esoterismo', 'cultura',
-            'series', 'musica', 'televisao', 'cinema',
-            'quimica', 'seresVivos', 'meioAmbiente', 'corpoHumanoSaude',
-            'comunicacaoImprensa', 'politica', 'direito', 'economiaAdministracao'
-         ]
+function AtencaoRandom({
+  mudarPagina,
+  gerarPergunta
+}) {
+  const areas = [
+    { categoria: 'linguaPortuguesa', cor: 'orange' },
+    { categoria: 'linguasEstrangeiras', cor: 'orange' },
+    { categoria: 'literaturaPortuguesa', cor: 'orange' },
+    { categoria: 'literaturaEstrangeira', cor: 'orange' },
 
-        const random = Math.floor(Math.random() * areas.length)
+    { categoria: 'infantil', cor: 'rgba(255,75,75,1)' },
+    { categoria: 'jogosGames', cor: 'rgba(255,75,75,1)' },
+    { categoria: 'hqMangas', cor: 'rgba(255,75,75,1)' },
+    { categoria: 'esportes', cor: 'rgba(255,75,75,1)' },
+
+    { categoria: 'informatica', cor: 'rgba(80,170,255,1)' },
+    { categoria: 'engenharias', cor: 'rgba(80,170,255,1)' },
+    { categoria: 'fisicaAstronomia', cor: 'rgba(80,170,255,1)' },
+    { categoria: 'matematicaLogica', cor: 'rgba(80,170,255,1)' },
+
+    { categoria: 'soci,PsicoEEduc', cor: 'rgba(170,80,255,1)' },
+    { categoria: 'filosofia', cor: 'rgba(170,80,255,1)' },
+    { categoria: 'historia', cor: 'rgba(170,80,255,1)' },
+    { categoria: 'geografia', cor: 'rgba(170,80,255,1)' },
+
+    { categoria: 'artes', cor: 'green' },
+    { categoria: 'religiao', cor: 'green' },
+    { categoria: 'esoterismo', cor: 'green' },
+    { categoria: 'cultura', cor: 'green' },
+
+    { categoria: 'series', cor: 'yellow' },
+    { categoria: 'musica', cor: 'yellow' },
+    { categoria: 'televisao', cor: 'yellow' },
+    { categoria: 'cinema', cor: 'yellow' },
+
+    { categoria: 'quimica', cor: 'white' },
+    { categoria: 'seresVivos', cor: 'white' },
+    { categoria: 'meioAmbiente', cor: 'white' },
+    { categoria: 'corpoHumanoSaude', cor: 'white' },
+
+    { categoria: 'comunicacaoImprensa', cor: 'pink' },
+    { categoria: 'politica', cor: 'pink' },
+    { categoria: 'direito', cor: 'pink' },
+    { categoria: 'economiaAdministracao', cor: 'pink' },
+  ]
+
+  const [random] = useState(
+    Math.floor(Math.random() * areas.length)
+  )
+
+  const areaEscolhida = areas[random]
 
   return (
     <Fundo>
@@ -77,7 +113,12 @@ function AtencaoRandom({
           <Button
             cor="white"
             escrever="Continuar Para Pergunta"
-            onPress={() => gerarPergunta(`${areas[random]}`, 'black')}
+            onPress={() =>
+              gerarPergunta(
+                areaEscolhida.categoria,
+                areaEscolhida.cor
+              )
+            }
           />
         </View>
 
