@@ -4,6 +4,7 @@ import Tutorial from '@/pages/Tutorial'
 import Configuracoes from '@/pages/Configuracoes'
 import PrimeiraPag from '@/pages/PrimeiraPag'
 import SegundaPag from '@/pages/SegundaPag'
+import SegundaPagRandom from '@/pages/SegundaPagRandom'
 import SelecTemaLaranja from '@/pages/SelecTemaLaranja'
 import Pergunta from '@/pages/Pergunta'
 import Resposta from '@/pages/Resposta'
@@ -20,6 +21,7 @@ import SelecTemaRosa from '@/pages/SelecTemaRosa'
 import { SQLiteProvider } from 'expo-sqlite'
 import { useSQLiteContext } from 'expo-sqlite'
 
+
 import {
   buscarPergunta,
   reciclarPerguntas,
@@ -33,6 +35,7 @@ function AppContent() {
   const [respostaAtual, setRespostaAtual] = useState('')
 
   const db = useSQLiteContext()
+  
 
   const [categoriaAtual, setCategoriaAtual] = useState('')
 
@@ -56,7 +59,7 @@ function AppContent() {
 
   async function reciclarTudo() {
   await reciclarPerguntas(db)
-
+  
   alert('Todas as perguntas foram recicladas!')
 }
 
@@ -86,6 +89,15 @@ function AppContent() {
   if (pagina === 'segunda') {
     return <SegundaPag mudarPagina={setPagina} />
   }
+
+  if (pagina === 'segundarandom') {
+  return (
+    <SegundaPagRandom
+      mudarPagina={setPagina}
+      gerarPergunta={gerarPergunta}
+    />
+  )
+}
 
   if (pagina === 'temaLaranja') {
     return (

@@ -64,7 +64,7 @@ function PrimeiraPag({ mudarPagina }) {
             <Button
               cor="white"
               escrever="Generalista Sortudo"
-              onPress={() => mudarPagina('atencaorandom')}
+              onPress={() => mudarPagina('segundarandom')}
             />
 
             <Button
