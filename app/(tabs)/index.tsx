@@ -1,7 +1,6 @@
 import {useState} from 'react'
 import Home from '@/pages/Home'
 import Tutorial from '@/pages/Tutorial'
-import Configuracoes from '@/pages/Configuracoes'
 import PrimeiraPag from '@/pages/PrimeiraPag'
 import SegundaPag from '@/pages/SegundaPag'
 import SegundaPagRandom from '@/pages/SegundaPagRandom'
@@ -72,10 +71,6 @@ function AppContent() {
 
   if (pagina === 'tutorial') {
     return <Tutorial mudarPagina={setPagina} />
-  }
-
-  if (pagina === 'config') {
-    return <Configuracoes mudarPagina={setPagina} />
   }
 
   if (pagina === 'primeira') {

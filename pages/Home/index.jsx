@@ -29,12 +29,6 @@ function Home({ mudarPagina, reciclarTudo }) {
 
           <Button
             cor="white"
-            escrever="Configurações"
-            onPress={() => mudarPagina('config')}
-          />
-
-          <Button
-            cor="white"
             escrever="Tutorial"
             onPress={() => mudarPagina('tutorial')}
           />

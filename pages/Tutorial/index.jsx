@@ -53,15 +53,46 @@ function Tutorial({ mudarPagina }) {
             Modos de jogo
           </Text>
 
-          <Text>• O Generalista</Text>
+          <Text>• O Generalista:</Text>
+          <Text>
+            Objetivo: Acertar uma pergunta de cada área, na qual o tema da pergunta de cada turno será escolhido pelo jogador
+          </Text>
           <Text>• Mestre dos Magos</Text>
+          <Text>
+            Objetivo: Acertar a maior quantidade de perguntas, no total de 32 feitas (uma para cada tema). Vence o jogador que possuir melhor conhecimento geral entre os temas presentes.
+          </Text>
           <Text>• Copa do Mundo</Text>
+          <Text>
+            Objetivo: Vence quem responder mais perguntas corretamente eliminando os adversários em combates diretos.
+          </Text>
           <Text>• Generalista Sortudo</Text>
+          <Text>
+            Objetivo: Acertar uma pergunta de cada área, com temas sorteados por cartas.
+          </Text>
           <Text>• O Especialista</Text>
+          <Text>
+            Objetivo: Vence quem responder o número de perguntas previamente combinado sobre o mesmo tema.
+          </Text>
           <Text>• O Caminho Para a Vitória</Text>
+          <Text>
+            Objetivo: chegar ao final do tabuleiro, acertando as perguntas de acordo com a sorte nos dados.
+          </Text>
           <Text>• Essa é a sua área</Text>
+          <Text>
+            Objetivo: Acertar primeiro uma pergunta de todos os temas de uma grande área.Vence aquele que acertar quatro perguntas, possuindo melhor conhecimento geral da área escolhida. 
+          </Text>
           <Text>• Cartas na mesa</Text>
+          <Text>
+            Objetivo: Quem fizer mais pontos no final das 32 perguntas dos temas sorteados nas cartas distribuídas vence o jogo.
+          </Text>
           <Text>• O Especialista Sortudo</Text>
+          <Text>
+            Objetivo: Vence quem responder o número de perguntas previamente combinado sobre o mesmo tema sorteado nas cartas. 
+          </Text>
+          <Text>Este jogo pode agregar mais de 8 jogadores. Nesse caso, é possível optar por equipes, ao invés de partidas individuais.</Text>
+          <Text>                                                                    </Text>
+          <Text>                                                                    </Text>
+          <Text>                                                                    </Text>
         </ScrollView>
 
         <Button
