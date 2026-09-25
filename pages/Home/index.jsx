@@ -12,7 +12,6 @@ function Home({ mudarPagina, reciclarTudo }) {
           width: '100%',
         }}
       >
-        {/* Botões */}
         <View
           style={{
             flex: 1,
@@ -33,8 +32,6 @@ function Home({ mudarPagina, reciclarTudo }) {
             onPress={() => mudarPagina('tutorial')}
           />
         </View>
-
-        {/* Lixeira */}
         <TouchableOpacity
           onPress={reciclarTudo}
           style={{
