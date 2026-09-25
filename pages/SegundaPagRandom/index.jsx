@@ -2,93 +2,93 @@ import { View, ScrollView } from 'react-native'
 
 import Fundo from '../../components/Fundo'
 import Button from '../../components/Button'
-import TextBubble from '@/components/TextBubble'
+import TextBubble from '../../components/TextBubble'
 
 function SegundaPagRandom({
   mudarPagina,
-  gerarPergunta
+  gerarPergunta,
 }) {
   const grandesAreas = [
     {
-      nome: 'Linguagens',
+      nome: 'Ciências Humanas',
       cor: 'orange',
       temas: [
-        'linguasEstrangeiras',
+        'geografia',
+        'historia',
+        'filosofia',
+        'soci,PsicoEEduc',
+      ],
+    },
+    {
+      nome: 'Línguas',
+      cor: 'yellow',
+      temas: [
         'linguaPortuguesa',
+        'linguasEstrangeiras',
         'literaturaPortuguesa',
-        'literaturaEstrangeira'
-      ]
+        'literaturaEstrangeira',
+      ],
     },
     {
       nome: 'Entretenimento',
-      cor: 'red',
+      cor: 'rgba(170,80,255,1)',
       temas: [
-        'infantil',
-        'jogosGames',
+        'esportes',
         'hqMangas',
-        'esportes'
-      ]
+        'jogosGames',
+        'infantil',
+      ],
     },
     {
-      nome: 'Tecnologia',
-      cor: 'blue',
-      temas: [
-        'informatica',
-        'engenharias',
-        'fisicaAstronomia',
-        'matematicaLogica'
-      ]
-    },
-    {
-      nome: 'Humanas',
-      cor: 'purple',
-      temas: [
-        'soci,PsicoEEduc',
-        'filosofia',
-        'historia',
-        'geografia'
-      ]
-    },
-    {
-      nome: 'Cultura',
-      cor: 'green',
-      temas: [
-        'artes',
-        'religiao',
-        'esoterismo',
-        'cultura'
-      ]
-    },
-    {
-      nome: 'Mídia',
-      cor: 'yellow',
-      temas: [
-        'series',
-        'musica',
-        'televisao',
-        'cinema'
-      ]
-    },
-    {
-      nome: 'Ciências',
+      nome: 'Ciências Exatas',
       cor: 'white',
       temas: [
-        'quimica',
-        'seresVivos',
-        'meioAmbiente',
-        'corpoHumanoSaude'
-      ]
+        'matematicaLogica',
+        'fisicaAstronomia',
+        'engenharias',
+        'informatica',
+      ],
     },
     {
-      nome: 'Sociais',
+      nome: 'Ciências Sociais Aplicadas',
+      cor: 'rgba(255,75,75,1)',
+      temas: [
+        'economiaAdministracao',
+        'direito',
+        'politica',
+        'comunicacaoImprensa',
+      ],
+    },
+    {
+      nome: 'Conhecimentos Gerais',
       cor: 'pink',
       temas: [
-        'comunicacaoImprensa',
-        'politica',
-        'direito',
-        'economiaAdministracao'
-      ]
-    }
+        'cultura',
+        'esoterismo',
+        'religiao',
+        'artes',
+      ],
+    },
+    {
+      nome: 'Lazer',
+      cor: 'rgba(80,170,255,1)',
+      temas: [
+        'cinema',
+        'televisao',
+        'musica',
+        'series',
+      ],
+    },
+    {
+      nome: 'Ciências Naturais',
+      cor: 'green',
+      temas: [
+        'corpoHumanoSaude',
+        'meioAmbiente',
+        'seresVivos',
+        'quimica',
+      ],
+    },
   ]
 
   function escolherGrandeArea(area) {
@@ -115,9 +115,9 @@ function SegundaPagRandom({
           }}
         >
           <TextBubble
-            cor="orange"
-            titulo="Escolha uma Grande Área"
-            texto="Escolha uma área para descobrir seu tema!"
+            cor="white"
+            titulo="Seleção de Grande Área."
+            texto="Para continuar, selecione a grande área da qual você ou seus amigos receberão a carta."
           />
 
           <View
@@ -148,7 +148,7 @@ function SegundaPagRandom({
         >
           <Button
             cor="white"
-            escrever="Retornar ao Menu Principal"
+            escrever="Retornar ao Menu Inicial"
             onPress={() => mudarPagina('home')}
           />
         </View>
